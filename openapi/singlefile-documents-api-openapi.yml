@@ -1,0 +1,126 @@
+openapi: 3.0.0
+info:
+  title: SingleFile External API Documentation documents API
+  description: Formation and compliance documents
+  termsOfService: https://www.singlefile.io/
+  contact:
+    email: support@singlefile.io
+  license:
+    name: BSD License
+  version: v1
+  x-apievangelist-provenance:
+    method: searched
+    source: https://docs.singlefile.ai/ (ReadMe per-operation OpenAPI fragments merged; OAuth2 scheme added from the documented Authentication guide)
+    generated: '2026-07-21'
+servers:
+- url: https://api.demo.singlefile.ai/external-api/v1
+security:
+- OAuth2ClientCredentials:
+  - read
+  - write
+tags:
+- name: documents
+  description: Formation and compliance documents
+paths:
+  /documents/{document_id}:
+    parameters:
+    - name: document_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: documents_read
+      description: ''
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentDetail'
+      tags:
+      - documents
+components:
+  schemas:
+    DocumentDetail:
+      required:
+      - document_type
+      - filing_type
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        title:
+          title: Title
+          type: string
+          maxLength: 1000
+          nullable: true
+        entity_name:
+          title: Entity name
+          type: string
+          minLength: 1
+          nullable: true
+        organization_id:
+          title: Organization id
+          type: string
+          readOnly: true
+        entity_id:
+          title: Entity id
+          type: string
+          readOnly: true
+        jurisdiction:
+          title: Jurisdiction
+          type: string
+          maxLength: 500
+          nullable: true
+        document_type:
+          title: Document type
+          type: string
+          minLength: 1
+        filing_type:
+          title: Filing type
+          type: string
+          minLength: 1
+        certified:
+          title: Certified
+          description: Check this if this document is a certified copy.
+          type: boolean
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        description:
+          title: Description
+          type: string
+          maxLength: 5000
+          nullable: true
+        document_url:
+          title: Document url
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        page_length:
+          title: Page length
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+  securitySchemes:
+    OAuth2ClientCredentials:
+      type: oauth2
+      description: 'OAuth 2.0 Client Credentials flow. Exchange client_id/client_secret at the token endpoint for a 1-hour bearer token; send it as Authorization: Bearer <token>.'
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.demo.singlefile.ai/o/token/
+          scopes:
+            read: Read access to entities, organizations, orders, documents, jurisdictions and tasks
+            write: Create and update entities, organizations, orders, documents and jurisdictions

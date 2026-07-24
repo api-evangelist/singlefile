@@ -1,0 +1,221 @@
+openapi: 3.0.0
+info:
+  title: SingleFile External API Documentation documents tasks API
+  description: Formation and compliance documents
+  termsOfService: https://www.singlefile.io/
+  contact:
+    email: support@singlefile.io
+  license:
+    name: BSD License
+  version: v1
+  x-apievangelist-provenance:
+    method: searched
+    source: https://docs.singlefile.ai/ (ReadMe per-operation OpenAPI fragments merged; OAuth2 scheme added from the documented Authentication guide)
+    generated: '2026-07-21'
+servers:
+- url: https://api.demo.singlefile.ai/external-api/v1
+security:
+- OAuth2ClientCredentials:
+  - read
+  - write
+tags:
+- name: tasks
+  description: Compliance tasks and deadlines
+paths:
+  /tasks/list:
+    parameters: []
+    get:
+      operationId: tasks_list_list
+      description: ''
+      parameters:
+      - name: ordering
+        in: query
+        description: Which field to use when ordering the results.
+        required: false
+        schema:
+          type: string
+      - name: search
+        in: query
+        description: A search term.
+        required: false
+        schema:
+          type: string
+      - name: page_number
+        in: query
+        description: A page number within the paginated result set.
+        required: false
+        schema:
+          type: integer
+      - name: page_size
+        in: query
+        description: Number of results to return per page.
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                - count
+                - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/TaskInstance'
+      tags:
+      - tasks
+  /tasks/{task_id}:
+    parameters:
+    - name: task_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: tasks_read
+      description: ''
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskInstance'
+      tags:
+      - tasks
+components:
+  schemas:
+    TaskInstance:
+      required:
+      - due_by
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        due_by:
+          title: Due by
+          description: The deadline for the task.
+          type: string
+          format: date
+        responsible_user_email:
+          title: Responsible user email
+          type: string
+          readOnly: true
+        entity_id:
+          title: Entity id
+          type: string
+          readOnly: true
+        status:
+          title: Status
+          type: string
+          enum:
+          - NONE
+          - ASSIGNED
+          - WAITING_FOR_CLIENT_RESPONSE
+          - ACKNOWLEDGED
+          - COMPLETED
+          - CANCELED
+        task:
+          title: Task
+          type: string
+          readOnly: true
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+        acknowledged_at:
+          title: Acknowledged at
+          type: string
+          format: date-time
+          nullable: true
+        completed_at:
+          title: Completed at
+          type: string
+          format: date-time
+          nullable: true
+        completed_by_order_id:
+          title: Completed by order id
+          type: string
+          readOnly: true
+        upcoming_first_reminder_at:
+          title: Upcoming first reminder at
+          type: string
+          format: date-time
+          nullable: true
+        upcoming_second_reminder_at:
+          title: Upcoming second reminder at
+          type: string
+          format: date-time
+          nullable: true
+        upcoming_third_reminder_at:
+          title: Upcoming third reminder at
+          type: string
+          format: date-time
+          nullable: true
+        upcoming_fourth_reminder_at:
+          title: Upcoming fourth reminder at
+          type: string
+          format: date-time
+          nullable: true
+        due_today_reminder_at:
+          title: Due today reminder at
+          type: string
+          format: date-time
+          nullable: true
+        past_due_first_reminder_at:
+          title: Past due first reminder at
+          type: string
+          format: date-time
+          nullable: true
+        past_due_second_reminder_at:
+          title: Past due second reminder at
+          type: string
+          format: date-time
+          nullable: true
+        past_due_third_reminder_at:
+          title: Past due third reminder at
+          type: string
+          format: date-time
+          nullable: true
+        escalate_reminder_at:
+          title: Escalate reminder at
+          type: string
+          format: date-time
+          nullable: true
+        last_reminded_at:
+          title: Last reminded at
+          type: string
+          format: date-time
+          nullable: true
+  securitySchemes:
+    OAuth2ClientCredentials:
+      type: oauth2
+      description: 'OAuth 2.0 Client Credentials flow. Exchange client_id/client_secret at the token endpoint for a 1-hour bearer token; send it as Authorization: Bearer <token>.'
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.demo.singlefile.ai/o/token/
+          scopes:
+            read: Read access to entities, organizations, orders, documents, jurisdictions and tasks
+            write: Create and update entities, organizations, orders, documents and jurisdictions

@@ -1,0 +1,264 @@
+openapi: 3.0.0
+info:
+  title: SingleFile External API Documentation documents jurisdictions API
+  description: Formation and compliance documents
+  termsOfService: https://www.singlefile.io/
+  contact:
+    email: support@singlefile.io
+  license:
+    name: BSD License
+  version: v1
+  x-apievangelist-provenance:
+    method: searched
+    source: https://docs.singlefile.ai/ (ReadMe per-operation OpenAPI fragments merged; OAuth2 scheme added from the documented Authentication guide)
+    generated: '2026-07-21'
+servers:
+- url: https://api.demo.singlefile.ai/external-api/v1
+security:
+- OAuth2ClientCredentials:
+  - read
+  - write
+tags:
+- name: jurisdictions
+  description: Entity jurisdictions and DBAs across US states
+paths:
+  /jurisdictions/{jurisdiction_id}/dbas:
+    parameters:
+    - name: jurisdiction_id
+      in: path
+      required: true
+      schema:
+        type: string
+    post:
+      operationId: jurisdictions_dbas_create
+      description: List, create, delete, or update DBAs for a jurisdiction (collection).
+      responses:
+        '201':
+          description: ''
+      tags:
+      - jurisdictions
+    delete:
+      operationId: jurisdictions_dbas_delete
+      description: List, create, delete, or update DBAs for a jurisdiction (collection).
+      responses:
+        '204':
+          description: ''
+      tags:
+      - jurisdictions
+    get:
+      operationId: jurisdictions_dbas_list
+      description: List, create, delete, or update DBAs for a jurisdiction (collection).
+      responses:
+        '200':
+          description: ''
+      tags:
+      - jurisdictions
+    patch:
+      operationId: jurisdictions_dbas_partial_update
+      description: List, create, delete, or update DBAs for a jurisdiction (collection).
+      responses:
+        '200':
+          description: ''
+      tags:
+      - jurisdictions
+  /jurisdictions/{jurisdiction_id}:
+    parameters:
+    - name: jurisdiction_id
+      in: path
+      required: true
+      schema:
+        type: string
+    patch:
+      operationId: jurisdictions_partial_update
+      description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/JurisdictionUpdate'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JurisdictionUpdate'
+      tags:
+      - jurisdictions
+    get:
+      operationId: jurisdictions_read
+      description: ''
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JurisdictionDetail'
+      tags:
+      - jurisdictions
+    put:
+      operationId: jurisdictions_update
+      description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/JurisdictionUpdate'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JurisdictionUpdate'
+      tags:
+      - jurisdictions
+components:
+  schemas:
+    JurisdictionDetail:
+      required:
+      - registration_type
+      - state_file_number
+      - status
+      - has_annual_report_subscription
+      - is_registered_agent
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        name:
+          title: Jurisdiction
+          type: string
+          maxLength: 100
+          nullable: true
+        organization_id:
+          title: Organization id
+          type: string
+          readOnly: true
+        entity_id:
+          title: Entity id
+          type: string
+          readOnly: true
+        registration_type:
+          title: Registration type
+          type: string
+          minLength: 1
+        state_file_number:
+          title: State file number
+          type: string
+          minLength: 1
+        registration_date:
+          title: Registration date
+          type: string
+          format: date
+          nullable: true
+        expiration_date:
+          title: Expiration date
+          type: string
+          format: date
+          nullable: true
+        status:
+          title: Status
+          type: string
+          minLength: 1
+        has_annual_report_subscription:
+          title: Has annual report subscription
+          type: boolean
+        is_registered_agent:
+          title: Is registered agent
+          type: boolean
+        dbas:
+          title: Dbas
+          type: string
+          readOnly: true
+        local_address:
+          $ref: '#/components/schemas/ExternalAddress'
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+    JurisdictionUpdate:
+      type: object
+      properties:
+        state_file_number:
+          title: State file number
+          type: string
+          maxLength: 30
+          nullable: true
+        local_address:
+          $ref: '#/components/schemas/ExternalAddress'
+        registration_date:
+          title: Registration date
+          type: string
+          format: date
+          nullable: true
+        expiration_date:
+          title: Expiration date
+          type: string
+          format: date
+          nullable: true
+    ExternalAddress:
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        street_address:
+          title: Street address
+          type: string
+          maxLength: 200
+          nullable: true
+        city:
+          title: City
+          type: string
+          maxLength: 100
+          nullable: true
+        state:
+          title: State
+          type: string
+          maxLength: 100
+          nullable: true
+        postal_code:
+          title: Postal code
+          type: string
+          maxLength: 20
+          nullable: true
+        country:
+          title: Country
+          type: string
+          maxLength: 100
+          nullable: true
+        country_code:
+          title: Country code
+          type: string
+          maxLength: 10
+          nullable: true
+        country_area:
+          title: Country area
+          type: string
+          maxLength: 100
+          nullable: true
+        city_area:
+          title: City area
+          type: string
+          maxLength: 100
+          nullable: true
+        sorting_code:
+          title: Sorting code
+          type: string
+          maxLength: 100
+          nullable: true
+  securitySchemes:
+    OAuth2ClientCredentials:
+      type: oauth2
+      description: 'OAuth 2.0 Client Credentials flow. Exchange client_id/client_secret at the token endpoint for a 1-hour bearer token; send it as Authorization: Bearer <token>.'
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.demo.singlefile.ai/o/token/
+          scopes:
+            read: Read access to entities, organizations, orders, documents, jurisdictions and tasks
+            write: Create and update entities, organizations, orders, documents and jurisdictions

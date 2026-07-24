@@ -1,0 +1,1784 @@
+openapi: 3.0.0
+info:
+  title: SingleFile External API Documentation documents organizations API
+  description: Formation and compliance documents
+  termsOfService: https://www.singlefile.io/
+  contact:
+    email: support@singlefile.io
+  license:
+    name: BSD License
+  version: v1
+  x-apievangelist-provenance:
+    method: searched
+    source: https://docs.singlefile.ai/ (ReadMe per-operation OpenAPI fragments merged; OAuth2 scheme added from the documented Authentication guide)
+    generated: '2026-07-21'
+servers:
+- url: https://api.demo.singlefile.ai/external-api/v1
+security:
+- OAuth2ClientCredentials:
+  - read
+  - write
+tags:
+- name: organizations
+  description: Organizations that own entities — CRUD plus contacts, documents, entities, orders and tasks
+paths:
+  /organizations/{organization_id}/contacts/create:
+    parameters:
+    - name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string
+    post:
+      operationId: organizations_contacts_create_create
+      description: View to create contacts for an organization
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizationContactCreateRequest'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationContactCreateRequest'
+      tags:
+      - organizations
+  /organizations/{organization_id}/contacts:
+    parameters:
+    - name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: organizations_contacts_list
+      description: View to list all contacts associated with an organization
+      parameters:
+      - name: ordering
+        in: query
+        description: Which field to use when ordering the results.
+        required: false
+        schema:
+          type: string
+      - name: search
+        in: query
+        description: A search term.
+        required: false
+        schema:
+          type: string
+      - name: page_number
+        in: query
+        description: A page number within the paginated result set.
+        required: false
+        schema:
+          type: integer
+      - name: page_size
+        in: query
+        description: Number of results to return per page.
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                - count
+                - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ContactList'
+      tags:
+      - organizations
+  /organizations/{organization_id}/contacts/{contact_id}:
+    parameters:
+    - name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    patch:
+      operationId: organizations_contacts_partial_update
+      description: View to retrieve and update a specific contact for an organization
+      requestBody:
+        $ref: '#/components/requestBodies/ContactUpdate'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactUpdate'
+      tags:
+      - organizations
+    get:
+      operationId: organizations_contacts_read
+      description: View to retrieve and update a specific contact for an organization
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactDetail'
+      tags:
+      - organizations
+    put:
+      operationId: organizations_contacts_update
+      description: View to retrieve and update a specific contact for an organization
+      requestBody:
+        $ref: '#/components/requestBodies/ContactUpdate'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactUpdate'
+      tags:
+      - organizations
+  /organizations/create:
+    parameters: []
+    post:
+      operationId: organizations_create_create
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizationCreate'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationCreate'
+      tags:
+      - organizations
+  /organizations/{organization_id}/documents:
+    parameters:
+    - name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: organizations_documents_list
+      description: ''
+      parameters:
+      - name: entity_id
+        in: query
+        description: entity_id
+        required: false
+        schema:
+          type: string
+      - name: jurisdiction
+        in: query
+        description: jurisdiction
+        required: false
+        schema:
+          type: string
+      - name: created_before
+        in: query
+        description: created_before
+        required: false
+        schema:
+          type: string
+      - name: created_after
+        in: query
+        description: created_after
+        required: false
+        schema:
+          type: string
+      - name: ordering
+        in: query
+        description: Which field to use when ordering the results.
+        required: false
+        schema:
+          type: string
+      - name: search
+        in: query
+        description: A search term.
+        required: false
+        schema:
+          type: string
+      - name: page_number
+        in: query
+        description: A page number within the paginated result set.
+        required: false
+        schema:
+          type: integer
+      - name: page_size
+        in: query
+        description: Number of results to return per page.
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                - count
+                - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DocumentList'
+      tags:
+      - organizations
+  /organizations/{organization_id}/documents/upload:
+    parameters:
+    - name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string
+    post:
+      operationId: organizations_documents_upload_create
+      description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/DocumentUpload'
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentUpload'
+      tags:
+      - organizations
+  /organizations/{organization_id}/entities:
+    parameters:
+    - name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: organizations_entities_list
+      description: ''
+      parameters:
+      - name: ordering
+        in: query
+        description: Which field to use when ordering the results.
+        required: false
+        schema:
+          type: string
+      - name: search
+        in: query
+        description: A search term.
+        required: false
+        schema:
+          type: string
+      - name: page_number
+        in: query
+        description: A page number within the paginated result set.
+        required: false
+        schema:
+          type: integer
+      - name: page_size
+        in: query
+        description: Number of results to return per page.
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                - count
+                - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/EntityList'
+      tags:
+      - organizations
+  /organizations/{organization_id}/entity/create:
+    parameters:
+    - name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string
+    post:
+      operationId: organizations_entity_create_create
+      description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/EntityCreate'
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityCreate'
+      tags:
+      - organizations
+  /organizations/list:
+    parameters: []
+    get:
+      operationId: organizations_list_list
+      description: ''
+      parameters:
+      - name: ordering
+        in: query
+        description: Which field to use when ordering the results.
+        required: false
+        schema:
+          type: string
+      - name: search
+        in: query
+        description: A search term.
+        required: false
+        schema:
+          type: string
+      - name: page_number
+        in: query
+        description: A page number within the paginated result set.
+        required: false
+        schema:
+          type: integer
+      - name: page_size
+        in: query
+        description: Number of results to return per page.
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                - count
+                - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/OrganizationList'
+      tags:
+      - organizations
+  /organizations/{organization_id}/orders:
+    parameters:
+    - name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: organizations_orders_list
+      description: ''
+      parameters:
+      - name: ordering
+        in: query
+        description: Which field to use when ordering the results.
+        required: false
+        schema:
+          type: string
+      - name: search
+        in: query
+        description: A search term.
+        required: false
+        schema:
+          type: string
+      - name: page_number
+        in: query
+        description: A page number within the paginated result set.
+        required: false
+        schema:
+          type: integer
+      - name: page_size
+        in: query
+        description: Number of results to return per page.
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                - count
+                - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/OrderList'
+      tags:
+      - organizations
+  /organizations/{organization_id}:
+    parameters:
+    - name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: organizations_read
+      description: ''
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationDetail'
+      tags:
+      - organizations
+  /organizations/{organization_id}/tasks:
+    parameters:
+    - name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: organizations_tasks_list
+      description: ''
+      parameters:
+      - name: ordering
+        in: query
+        description: Which field to use when ordering the results.
+        required: false
+        schema:
+          type: string
+      - name: search
+        in: query
+        description: A search term.
+        required: false
+        schema:
+          type: string
+      - name: page_number
+        in: query
+        description: A page number within the paginated result set.
+        required: false
+        schema:
+          type: integer
+      - name: page_size
+        in: query
+        description: Number of results to return per page.
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                - count
+                - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/TaskInstance'
+      tags:
+      - organizations
+components:
+  schemas:
+    Address:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        serializer:
+          title: Serializer
+          type: string
+          readOnly: true
+        state_long_name:
+          title: State long name
+          type: string
+          readOnly: true
+          minLength: 1
+        external_id:
+          title: External id
+          type: string
+          format: uuid
+          readOnly: true
+        street_address:
+          title: Street address
+          type: string
+          maxLength: 200
+          nullable: true
+        city:
+          title: City
+          type: string
+          maxLength: 100
+          nullable: true
+        state:
+          title: State
+          type: string
+          maxLength: 100
+          nullable: true
+        postal_code:
+          title: Postal code
+          type: string
+          maxLength: 20
+          nullable: true
+        country:
+          title: Country
+          type: string
+          maxLength: 100
+          nullable: true
+        country_code:
+          title: Country code
+          type: string
+          maxLength: 10
+          nullable: true
+        country_area:
+          title: Country area
+          type: string
+          maxLength: 100
+          nullable: true
+        city_area:
+          title: City area
+          type: string
+          maxLength: 100
+          nullable: true
+        sorting_code:
+          title: Sorting code
+          type: string
+          maxLength: 100
+          nullable: true
+      nullable: true
+    User:
+      required:
+      - email
+      - first_name
+      - last_name
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        email:
+          title: Email
+          type: string
+          format: email
+          minLength: 1
+        first_name:
+          title: First name
+          type: string
+          minLength: 1
+        last_name:
+          title: Last name
+          type: string
+          minLength: 1
+        job_title:
+          title: Job title
+          type: string
+          nullable: true
+        telephone_number:
+          title: Telephone number
+          type: string
+          nullable: true
+        address:
+          $ref: '#/components/schemas/ExternalAddress'
+    OrganizationDetail:
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        name:
+          title: Name
+          type: string
+          maxLength: 500
+          nullable: true
+        representing_organizations:
+          title: Representing organizations
+          type: string
+          readOnly: true
+        primary_contact_email:
+          title: Primary contact email
+          type: string
+          readOnly: true
+        billing_contact_email:
+          title: Billing contact email
+          type: string
+          readOnly: true
+        authorized_signatory_email:
+          title: Authorized signatory email
+          type: string
+          readOnly: true
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+    EntityCreate:
+      required:
+      - name
+      - entity_type
+      - mailing_address
+      - primary_address
+      - primary_contact
+      - jurisdictions
+      - organization_id
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+          minLength: 1
+        entity_type:
+          title: Entity type
+          type: string
+          minLength: 1
+        primary_jurisdiction:
+          title: Primary jurisdiction
+          type: string
+          readOnly: true
+        nature_of_business:
+          title: Nature of business
+          type: string
+          maxLength: 500
+        specific_business_purpose:
+          title: Specific business purpose
+          type: string
+          maxLength: 250
+          nullable: true
+        fein:
+          title: Fein
+          type: string
+          maxLength: 10
+          minLength: 1
+        taxid_type:
+          title: Taxid type
+          type: string
+          enum:
+          - FEIN
+          - SSN
+          - ITIN
+          - FOREIGN
+        taxid:
+          title: Taxid
+          type: string
+          maxLength: 50
+          minLength: 1
+        telephone_number:
+          title: Telephone number
+          type: string
+          maxLength: 25
+          nullable: true
+        website_url:
+          title: Website url
+          type: string
+          maxLength: 250
+          nullable: true
+        fiscal_year_end:
+          title: Fiscal year end
+          type: string
+          format: date
+        mailing_address:
+          $ref: '#/components/schemas/ExternalAddress'
+        primary_address:
+          $ref: '#/components/schemas/ExternalAddress'
+        incorporator:
+          $ref: '#/components/schemas/User'
+        primary_contact:
+          $ref: '#/components/schemas/User'
+        entity_authorized_contact:
+          $ref: '#/components/schemas/User'
+        jurisdictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Jurisdiction'
+        gross_assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/GrossAsset'
+        share_classes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ShareClass'
+        governing_persons:
+          type: array
+          items:
+            $ref: '#/components/schemas/Governor'
+        organization_id:
+          title: Organization id
+          type: string
+          format: uuid
+    ContactDetail:
+      required:
+      - email
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        name:
+          title: Name
+          type: string
+          readOnly: true
+        first_name:
+          title: First name
+          type: string
+          maxLength: 100
+          nullable: true
+        middle_name:
+          title: Middle name
+          type: string
+          maxLength: 100
+          nullable: true
+        last_name:
+          title: Last name
+          type: string
+          maxLength: 100
+          nullable: true
+        email:
+          title: Email
+          type: string
+          format: email
+          maxLength: 254
+          minLength: 1
+        phone:
+          title: Phone
+          type: string
+          readOnly: true
+          minLength: 1
+          nullable: true
+        address:
+          $ref: '#/components/schemas/ExternalAddress'
+        roles:
+          type: array
+          items:
+            type: string
+            minLength: 1
+          readOnly: true
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated by
+          type: string
+          readOnly: true
+    ContactList:
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        name:
+          title: Name
+          type: string
+          readOnly: true
+        email:
+          title: Email
+          type: string
+          format: email
+          readOnly: true
+          minLength: 1
+        phone:
+          title: Phone
+          type: string
+          readOnly: true
+          minLength: 1
+          nullable: true
+        roles:
+          type: array
+          items:
+            type: string
+            minLength: 1
+          readOnly: true
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+    OrganizationCreate:
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+          maxLength: 500
+          nullable: true
+        domain:
+          title: Domain
+          description: Domain name for the company's email addresses.
+          type: string
+          maxLength: 500
+          nullable: true
+        notes:
+          title: Notes
+          description: Internal notes regarding this company.
+          type: string
+          nullable: true
+        do_not_email:
+          title: Do not email
+          type: boolean
+        send_all_state_notice:
+          title: Send all state notice
+          description: Users will always receive state compliance notice emails
+          type: boolean
+          nullable: true
+        invoice_only:
+          title: Invoice only
+          description: 'If True, the Stripe customer for this company (& it''s child entities) will always have invoices sent to them (no auto-charge).<br/><br/><strong>Note: Individual orders may override this setting if they have a payment method assigned at the order level (e.g., for filings requiring immediate payment like DEARs).</strong>'
+          type: boolean
+    ContactCreate:
+      required:
+      - first_name
+      - last_name
+      - email
+      type: object
+      properties:
+        first_name:
+          title: First name
+          type: string
+          maxLength: 100
+          nullable: true
+        last_name:
+          title: Last name
+          type: string
+          maxLength: 100
+          nullable: true
+        middle_name:
+          title: Middle name
+          type: string
+          maxLength: 100
+          nullable: true
+        email:
+          title: Email
+          type: string
+          format: email
+          maxLength: 254
+          minLength: 1
+        phone:
+          title: Phone
+          type: string
+          maxLength: 25
+          nullable: true
+        address:
+          $ref: '#/components/schemas/ExternalAddress'
+        is_active:
+          title: Is active
+          type: boolean
+          default: true
+      nullable: true
+    ContactUpdate:
+      required:
+      - email
+      type: object
+      properties:
+        first_name:
+          title: First name
+          type: string
+          maxLength: 100
+          nullable: true
+        last_name:
+          title: Last name
+          type: string
+          maxLength: 100
+          nullable: true
+        middle_name:
+          title: Middle name
+          type: string
+          maxLength: 100
+          nullable: true
+        email:
+          title: Email
+          type: string
+          format: email
+          maxLength: 254
+          minLength: 1
+        phone:
+          title: Phone
+          type: string
+          maxLength: 25
+          nullable: true
+        address:
+          $ref: '#/components/schemas/ExternalAddress'
+        is_active:
+          title: Is active
+          type: boolean
+    ShareClass:
+      required:
+      - class_name
+      - authorized_shares
+      type: object
+      properties:
+        start_date:
+          title: Start date
+          type: string
+          format: date
+          nullable: true
+        class_name:
+          title: Class name
+          type: string
+          maxLength: 100
+          minLength: 1
+        authorized_shares:
+          title: Authorized shares
+          type: integer
+          maximum: 9223372036854776000
+          minimum: -9223372036854776000
+        par_value:
+          title: Par value
+          type: string
+          format: decimal
+          nullable: true
+        issued_shares:
+          title: Issued shares
+          type: integer
+          maximum: 9223372036854776000
+          minimum: -9223372036854776000
+          nullable: true
+    ExternalAddress:
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        street_address:
+          title: Street address
+          type: string
+          maxLength: 200
+          nullable: true
+        city:
+          title: City
+          type: string
+          maxLength: 100
+          nullable: true
+        state:
+          title: State
+          type: string
+          maxLength: 100
+          nullable: true
+        postal_code:
+          title: Postal code
+          type: string
+          maxLength: 20
+          nullable: true
+        country:
+          title: Country
+          type: string
+          maxLength: 100
+          nullable: true
+        country_code:
+          title: Country code
+          type: string
+          maxLength: 10
+          nullable: true
+        country_area:
+          title: Country area
+          type: string
+          maxLength: 100
+          nullable: true
+        city_area:
+          title: City area
+          type: string
+          maxLength: 100
+          nullable: true
+        sorting_code:
+          title: Sorting code
+          type: string
+          maxLength: 100
+          nullable: true
+    DocumentList:
+      required:
+      - document_type
+      - filing_type
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        title:
+          title: Title
+          type: string
+          maxLength: 1000
+          nullable: true
+        entity_name:
+          title: Entity name
+          type: string
+          minLength: 1
+          nullable: true
+        organization_id:
+          title: Organization id
+          type: string
+          readOnly: true
+        entity_id:
+          title: Entity id
+          type: string
+          readOnly: true
+        jurisdiction:
+          title: Jurisdiction
+          type: string
+          maxLength: 500
+          nullable: true
+        document_type:
+          title: Document type
+          type: string
+          minLength: 1
+        filing_type:
+          title: Filing type
+          type: string
+          minLength: 1
+        certified:
+          title: Certified
+          description: Check this if this document is a certified copy.
+          type: boolean
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+    OrderList:
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        order_id:
+          title: Order id
+          type: string
+          maxLength: 50
+          minLength: 1
+        display_name:
+          title: Display name
+          type: string
+          readOnly: true
+        filing_type:
+          title: Filing type
+          type: string
+          enum:
+          - NONE
+          - ANY
+          - AMENDED ANNUAL REPORT
+          - AMENDMENT
+          - ANNUAL REPORT
+          - APOSTILLE
+          - BOI
+          - BRINGDOWN LETTER
+          - BUNDLE
+          - CERTIFIED DOCUMENT
+          - CHANGE IN CAPITAL
+          - COGS
+          - CONVERSION
+          - DFPI_VCC_REGISTRATION
+          - DFPI_VCC_REPORT
+          - DISSOLUTION
+          - FOREIGN QUALIFICATION
+          - FOREIGN QUALIFICATION AMENDMENT
+          - FORMATION
+          - INDEPENDENT DIRECTOR SERVICE
+          - INITIAL REPORT
+          - INTERNATIONAL REQUEST
+          - MERGER
+          - NAME RESERVATION
+          - PUBLICATION
+          - QUARTERLY ESTIMATED FRANCHISE TAX PAYMENT
+          - REGISTERED AGENT CHANGE
+          - REGISTERED AGENT RESIGNATION
+          - STATEMENT OF CORRECTION
+          - SUBSCRIBE_TO_AR
+          - SUBSCRIBE_TO_DFPI_VCC
+          - SUBSCRIBE_TO_FINCEN_BOI
+          - SUBSCRIPTION RENEWAL
+          - TRANSPARENCY_ACT
+          - INITIAL TRANSPARENCY ACT
+          - ANNUAL TRANSPARENCY ACT
+          - EXEMPT AFFIDAVIT REPORT
+          - INITIAL EXEMPT TRANSPARENCY ACT
+          - ANNUAL EXEMPT TRANSPARENCY ACT
+          - REVIVAL
+          - UCC
+          - STATE UCC SEARCH
+          - COUNTY UCC STL FTL JL SEARCH
+          - COUNTY LITIGATION SEARCH
+          - FEDERAL LITIGATION SEARCH
+          - BANKRUPTCY SEARCH
+          - PATRIOT ACT SEARCH
+          - UCC BUNDLE
+          - EIN
+          - DOING BUSINESS AS NAME
+          - WITHDRAWAL
+          - OTHER
+          - REJECTED
+        entity_id:
+          title: Entity id
+          type: string
+          readOnly: true
+        entity_name:
+          title: Entity name
+          type: string
+          readOnly: true
+          minLength: 1
+        status:
+          title: Status
+          type: string
+          readOnly: true
+          minLength: 1
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        created_by:
+          title: Created by
+          type: string
+          readOnly: true
+    OrganizationContactCreateRequest:
+      type: object
+      properties:
+        primary_contact:
+          $ref: '#/components/schemas/ContactCreate'
+        billing_contact:
+          $ref: '#/components/schemas/ContactCreate'
+        authorized_contact_override:
+          $ref: '#/components/schemas/ContactCreate'
+    Jurisdiction:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        serializer:
+          title: Serializer
+          type: string
+          readOnly: true
+        local_address:
+          $ref: '#/components/schemas/Address'
+        is_primary:
+          title: Is primary
+          type: string
+          readOnly: true
+        is_foreign_qualified:
+          title: Is foreign qualified
+          type: string
+          readOnly: true
+        annual_report_data:
+          title: Annual report data
+          type: string
+          readOnly: true
+        annual_report_due_date:
+          title: Annual report due date
+          type: string
+          readOnly: true
+        status:
+          title: Status
+          type: string
+          readOnly: true
+        is_new_entity:
+          title: Is new entity
+          type: boolean
+        is_ra:
+          title: Is ra
+          type: string
+          readOnly: true
+        external_id:
+          title: External id
+          type: string
+          format: uuid
+          readOnly: true
+        registration_type:
+          title: Registration type
+          type: string
+          enum:
+          - none
+          - primary
+          - foreign_qualified
+          - registered_agent_only
+        name:
+          title: Jurisdiction
+          type: string
+          maxLength: 100
+          nullable: true
+        jurisdiction_type:
+          title: Jurisdiction type
+          description: Type of jurisdiction (country or state)
+          type: string
+          enum:
+          - country
+          - state
+        ubi:
+          title: Ubi
+          description: The state file number for this jurisdiction
+          type: string
+          maxLength: 30
+          nullable: true
+        access_code:
+          title: Access code
+          description: The access code for this jurisdiction. Used by states as a security measure to mitigate business theft.
+          type: string
+          maxLength: 20
+          nullable: true
+        ra_name:
+          title: Ra name
+          description: Displays the name of the current RA, if not Singlefile.
+          type: string
+          maxLength: 100
+          nullable: true
+        is_annual_report:
+          title: Is annual report
+          description: Is the entity subscribed for annual report services in the given jurisdiction?
+          type: boolean
+        is_transparency_act:
+          title: Is transparency act
+          description: Is the entity subscribed for transparency act services in the given jurisdiction?
+          type: boolean
+        is_dfpi_vcc:
+          title: Is dfpi vcc
+          description: Is the entity subscribed for DFPI VCC demographic report services in the given jurisdiction?
+          type: boolean
+        is_auto_ar_override:
+          title: Is auto ar override
+          description: If True, allows manual override of automatic annual report service settings
+          type: boolean
+        registration_date:
+          title: Registration date
+          type: string
+          format: date
+          nullable: true
+        expiration_date:
+          title: Expiration date
+          type: string
+          format: date
+          nullable: true
+        tax_number:
+          title: Tax number
+          type: string
+          maxLength: 20
+          nullable: true
+        stripe_subs_id_ra_service:
+          title: Stripe Subscription Id - Registered Agent
+          type: string
+          maxLength: 100
+          nullable: true
+        stripe_subs_id_annual_report:
+          title: Stripe Subscription Id - Annual Report
+          type: string
+          maxLength: 100
+          nullable: true
+        stripe_subs_id_dfpi_vcc:
+          title: Stripe Subscription Id - DFPI VCC
+          type: string
+          maxLength: 100
+          nullable: true
+        fictitious_name:
+          title: Fictitious name
+          description: If different from the entity's primary jurisdiction name, this is the name of the entity in this jurisdiction. As of July 19, 2021, this value is for tracking purposes only. It must be included manually in filings.
+          type: string
+          maxLength: 500
+        reinstatement_date:
+          title: Reinstatement date
+          description: Colorado uses the entity's reinstatement date, if there is one, to calculate the due date of the entity's annual report.
+          type: string
+          format: date
+          nullable: true
+        service_end_date:
+          title: Service end date
+          description: The date the entity's service ended in the jurisdiction.
+          type: string
+          format: date
+          nullable: true
+        credentials:
+          title: Credentials
+          description: The CID/PIN or credentials for the jurisdiction.
+          type: string
+          maxLength: 100
+          nullable: true
+        annual_report_due_date_override:
+          title: Annual report due date override
+          description: This field should be used for the annual report due date if the jurisdiction allows entities to choose an annual report due date.
+          type: string
+          format: date
+          nullable: true
+        entity:
+          title: Entity
+          type: integer
+          nullable: true
+        parent_jurisdiction:
+          title: Parent jurisdiction
+          description: Parent jurisdiction (e.g. country for a state)
+          type: integer
+          nullable: true
+        registered_agent:
+          title: Registered agent
+          type: string
+          nullable: true
+    Governor:
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        title:
+          title: Title
+          type: string
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          readOnly: true
+        is_organization:
+          title: Is organization
+          type: string
+          readOnly: true
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+        first_name:
+          title: First name
+          type: string
+          maxLength: 100
+        middle_name:
+          title: Middle name
+          type: string
+          maxLength: 100
+        last_name:
+          title: Last name
+          type: string
+          maxLength: 100
+        governing_entity_name:
+          title: Governing entity name
+          description: "Name of entity that serves as a 'governor' of the entity linked in the entity Foreign key. \nNote: You have either an governor_entity name or a first/last name."
+          type: string
+          maxLength: 100
+        is_director:
+          title: Is director
+          type: boolean
+        address:
+          title: Address
+          type: string
+          readOnly: true
+        appointment_date:
+          title: Appointment date
+          description: Optional appointment date for the governor.
+          type: string
+          format: date-time
+          nullable: true
+        expiration_date:
+          title: Expiration date
+          description: Optional term expiration date for the governor.
+          type: string
+          format: date-time
+          nullable: true
+    OrganizationList:
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        name:
+          title: Name
+          type: string
+          maxLength: 500
+          nullable: true
+        representing_organizations:
+          title: Representing organizations
+          type: string
+          readOnly: true
+        primary_contact_email:
+          title: Primary contact email
+          type: string
+          readOnly: true
+        billing_contact_email:
+          title: Billing contact email
+          type: string
+          readOnly: true
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+    EntityList:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        name:
+          title: Name
+          type: string
+          maxLength: 500
+          minLength: 1
+        entity_type:
+          title: Entity type
+          type: string
+          enum:
+          - Corporation
+          - Limited Liability Company
+          - Association
+          - Attorney for Bar
+          - Benefit Corporation
+          - Close Benefit Corporation
+          - Benefit LLC
+          - Benefit Professional Corporation
+          - Benevolent Corporation
+          - Close Corporation
+          - Close Limited Liability Company
+          - Close Professional Corporation
+          - Cooperative
+          - Cooperative Corporation
+          - Farm Corporation
+          - Farm Limited Liability Company
+          - Professional Limited Liability Limited Partnership
+          - Corporation Sole
+          - Doing Business as Name
+          - Exempt Nonstock Corporation
+          - General Partnership
+          - Individual
+          - Series Professional Limited Liability Company
+          - Limited Liability Limited Partnership
+          - Limited Liability Partnership
+          - Limited Partnership
+          - Low-Profit Limited Liability Company
+          - Massachusetts Trust
+          - Mutual Benefit Enterprise
+          - Mutual Benefit Nonprofit Corporation
+          - Nonprofit Corporation
+          - Nonprofit Limited Liability Company
+          - Personal Attorney
+          - Private Foundation
+          - Professional Corporation
+          - Professional Limited Liability Company
+          - Professional Limited Liability Partnership
+          - Professional Limited Partnership
+          - Public Benefit Corporation
+          - Public Benefit Nonprofit Corporation
+          - Religious Nonprofit Corporation
+          - Series Limited Liability Company
+          - Social Purpose Corporation
+          - Sole Proprietorship
+          - Sustainable Business Corporation
+          - Statutory Trust
+          - Trust
+        organization_id:
+          title: Organization id
+          type: string
+          readOnly: true
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+    GrossAsset:
+      required:
+      - date
+      - assets
+      type: object
+      properties:
+        date:
+          title: Date
+          type: string
+          format: date
+        assets:
+          title: Assets
+          type: string
+          format: decimal
+    DocumentUpload:
+      required:
+      - filing_type
+      type: object
+      properties:
+        file:
+          title: File
+          description: Document file to upload (PDF, DOCX)
+          type: string
+          readOnly: true
+          format: uri
+        title:
+          title: Title
+          description: Document title (auto-generated if not provided)
+          type: string
+          maxLength: 1000
+          minLength: 1
+        description:
+          title: Description
+          description: Document description
+          type: string
+          maxLength: 5000
+          minLength: 1
+        entity_id:
+          title: Entity id
+          description: ID of the entity to associate with this document
+          type: string
+          format: uuid
+        organization_id:
+          title: Organization id
+          description: ID of the organization (required if entity_id not provided)
+          type: string
+          format: uuid
+        jurisdiction:
+          title: Jurisdiction
+          description: Jurisdiction for the document
+          type: string
+          maxLength: 500
+          minLength: 1
+        filing_type:
+          title: Filing type
+          description: Filing type for the document
+          type: string
+          maxLength: 100
+          minLength: 1
+        document_type:
+          title: Document type
+          description: Document type (e.g., FILING, EVIDENCE, CORPORATE_RECORDS)
+          type: string
+          maxLength: 100
+          minLength: 1
+    TaskInstance:
+      required:
+      - due_by
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        due_by:
+          title: Due by
+          description: The deadline for the task.
+          type: string
+          format: date
+        responsible_user_email:
+          title: Responsible user email
+          type: string
+          readOnly: true
+        entity_id:
+          title: Entity id
+          type: string
+          readOnly: true
+        status:
+          title: Status
+          type: string
+          enum:
+          - NONE
+          - ASSIGNED
+          - WAITING_FOR_CLIENT_RESPONSE
+          - ACKNOWLEDGED
+          - COMPLETED
+          - CANCELED
+        task:
+          title: Task
+          type: string
+          readOnly: true
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+        acknowledged_at:
+          title: Acknowledged at
+          type: string
+          format: date-time
+          nullable: true
+        completed_at:
+          title: Completed at
+          type: string
+          format: date-time
+          nullable: true
+        completed_by_order_id:
+          title: Completed by order id
+          type: string
+          readOnly: true
+        upcoming_first_reminder_at:
+          title: Upcoming first reminder at
+          type: string
+          format: date-time
+          nullable: true
+        upcoming_second_reminder_at:
+          title: Upcoming second reminder at
+          type: string
+          format: date-time
+          nullable: true
+        upcoming_third_reminder_at:
+          title: Upcoming third reminder at
+          type: string
+          format: date-time
+          nullable: true
+        upcoming_fourth_reminder_at:
+          title: Upcoming fourth reminder at
+          type: string
+          format: date-time
+          nullable: true
+        due_today_reminder_at:
+          title: Due today reminder at
+          type: string
+          format: date-time
+          nullable: true
+        past_due_first_reminder_at:
+          title: Past due first reminder at
+          type: string
+          format: date-time
+          nullable: true
+        past_due_second_reminder_at:
+          title: Past due second reminder at
+          type: string
+          format: date-time
+          nullable: true
+        past_due_third_reminder_at:
+          title: Past due third reminder at
+          type: string
+          format: date-time
+          nullable: true
+        escalate_reminder_at:
+          title: Escalate reminder at
+          type: string
+          format: date-time
+          nullable: true
+        last_reminded_at:
+          title: Last reminded at
+          type: string
+          format: date-time
+          nullable: true
+  securitySchemes:
+    OAuth2ClientCredentials:
+      type: oauth2
+      description: 'OAuth 2.0 Client Credentials flow. Exchange client_id/client_secret at the token endpoint for a 1-hour bearer token; send it as Authorization: Bearer <token>.'
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.demo.singlefile.ai/o/token/
+          scopes:
+            read: Read access to entities, organizations, orders, documents, jurisdictions and tasks
+            write: Create and update entities, organizations, orders, documents and jurisdictions

@@ -1,0 +1,459 @@
+openapi: 3.0.0
+info:
+  title: SingleFile External API Documentation documents orders API
+  description: Formation and compliance documents
+  termsOfService: https://www.singlefile.io/
+  contact:
+    email: support@singlefile.io
+  license:
+    name: BSD License
+  version: v1
+  x-apievangelist-provenance:
+    method: searched
+    source: https://docs.singlefile.ai/ (ReadMe per-operation OpenAPI fragments merged; OAuth2 scheme added from the documented Authentication guide)
+    generated: '2026-07-21'
+servers:
+- url: https://api.demo.singlefile.ai/external-api/v1
+security:
+- OAuth2ClientCredentials:
+  - read
+  - write
+tags:
+- name: orders
+  description: Filing orders — create, place, update, and document-request driven order creation
+paths:
+  /orders:
+    parameters: []
+    post:
+      operationId: create_order
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderCreate'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderCreate'
+      tags:
+      - orders
+  /orders/document-requests/{request_id}:
+    parameters:
+    - name: request_id
+      in: path
+      required: true
+      schema:
+        type: string
+    post:
+      operationId: create_order_from_document_request
+      description: Create an order from the order document request.
+      responses:
+        '201':
+          description: ''
+      tags:
+      - orders
+    get:
+      operationId: get_order_document_request
+      description: Get the order document request for user review.
+      responses:
+        '200':
+          description: ''
+      tags:
+      - orders
+    put:
+      operationId: update_order_document_request
+      description: Update the order document request with user-provided data.
+      responses:
+        '200':
+          description: ''
+      tags:
+      - orders
+  /orders/{order_id}:
+    parameters:
+    - name: order_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: get_order
+      description: ''
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderDetail'
+      tags:
+      - orders
+    patch:
+      operationId: orders_partial_update
+      description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/OrderDetail'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderDetail'
+      tags:
+      - orders
+    post:
+      operationId: place_order
+      description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/OrderDetail'
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderDetail'
+      tags:
+      - orders
+    put:
+      operationId: update_order
+      description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/OrderDetail'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderDetail'
+      tags:
+      - orders
+components:
+  schemas:
+    OrderDetail:
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          readOnly: true
+          nullable: true
+        order_id:
+          title: Order id
+          type: string
+          maxLength: 50
+          minLength: 1
+        entity_id:
+          title: Entity id
+          type: string
+          readOnly: true
+        entity_name:
+          title: Entity name
+          type: string
+          readOnly: true
+          minLength: 1
+        entity_type:
+          title: Entity type
+          type: string
+          enum:
+          - Any
+          - Other
+          - Corporation
+          - Limited Liability Company
+          - Association
+          - Cooperative
+          - Limited Partnership
+          - General Partnership
+          - Individual
+          - Attorney
+          - Sole Proprietorship
+          - Trust
+        organization:
+          title: Organization
+          type: string
+          readOnly: true
+        status:
+          title: Status
+          type: string
+          readOnly: true
+          minLength: 1
+        jurisdiction:
+          title: Jurisdiction
+          type: string
+          readOnly: true
+          minLength: 1
+        filing_type:
+          title: Filing type
+          type: string
+          readOnly: true
+          minLength: 1
+        completed_at:
+          title: Completed at
+          type: string
+          format: date-time
+          nullable: true
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+        created_by:
+          title: Created by
+          type: string
+          readOnly: true
+        document_id:
+          title: Document id
+          type: string
+          readOnly: true
+        variant:
+          title: Variant
+          type: string
+          readOnly: true
+        comments:
+          title: Comments
+          description: Users can enter additional comments for this order here.
+          type: string
+          maxLength: 2000
+          nullable: true
+        share_classes:
+          title: Share classes
+          type: string
+          readOnly: true
+        mailing_address:
+          title: Mailing address
+          type: string
+          readOnly: true
+        primary_address:
+          title: Primary address
+          type: string
+          readOnly: true
+        local_address:
+          title: Local address
+          type: string
+          readOnly: true
+        primary_contact:
+          title: Primary contact
+          type: string
+          readOnly: true
+        billing_contact:
+          title: Billing contact
+          type: string
+          readOnly: true
+        officers:
+          title: Officers
+          type: string
+          readOnly: true
+        registered_agent:
+          title: Registered agent
+          type: string
+          readOnly: true
+        authorized_person_name:
+          title: Authorized person name
+          type: string
+          readOnly: true
+        authorized_partner:
+          title: Authorized partner
+          type: string
+          readOnly: true
+        general_partners:
+          title: General partners
+          type: string
+          readOnly: true
+        additional_data:
+          title: Additional data
+          type: string
+          readOnly: true
+        client_matter_number:
+          title: Client matter number
+          type: string
+          readOnly: true
+          minLength: 1
+        order_items:
+          title: Order items
+          type: string
+          readOnly: true
+        total_amount:
+          title: Total amount
+          type: string
+          readOnly: true
+    OrderCreate:
+      required:
+      - filing_type
+      - entity_type
+      type: object
+      properties:
+        entity_id:
+          title: Entity id
+          type: string
+          format: uuid
+        entity_name:
+          title: Entity name
+          type: string
+          minLength: 1
+        organization:
+          title: Organization
+          type: object
+        jurisdiction:
+          title: Jurisdiction
+          type: string
+          minLength: 1
+        filing_type:
+          title: Filing type
+          type: string
+          minLength: 1
+        entity_type:
+          title: Entity type
+          type: string
+          minLength: 1
+        comments:
+          title: Comments
+          type: string
+        mailing_address:
+          title: Mailing address
+          type: object
+          additionalProperties:
+            type: string
+            nullable: true
+        primary_address:
+          title: Primary address
+          type: object
+          additionalProperties:
+            type: string
+            nullable: true
+        primary_contact:
+          title: Primary contact
+          type: object
+          additionalProperties:
+            type: string
+            nullable: true
+        local_address:
+          title: Local address
+          type: object
+          additionalProperties:
+            type: string
+            nullable: true
+        effective_filing_date:
+          title: Effective filing date
+          type: string
+          minLength: 1
+        specific_business_purpose:
+          title: Specific business purpose
+          type: string
+          minLength: 1
+        add_certified_copy:
+          title: Add certified copy
+          type: boolean
+          default: false
+        nature_of_business:
+          title: Nature of business
+          type: string
+          minLength: 1
+        date_of_first_business:
+          title: Date of first business
+          type: string
+          minLength: 1
+        variant:
+          title: Variant
+          type: string
+          minLength: 1
+        officers:
+          type: array
+          items:
+            type: string
+            nullable: true
+        expiration_date:
+          title: Expiration date
+          type: string
+          minLength: 1
+        county:
+          title: County
+          type: string
+          minLength: 1
+        share_classes:
+          title: Share classes
+          type: object
+          additionalProperties:
+            type: string
+            nullable: true
+        minority_owned:
+          title: Minority owned
+          type: boolean
+        minority_owner_race:
+          title: Minority owner race
+          type: string
+          minLength: 1
+        female_owned:
+          title: Female owned
+          type: boolean
+        document:
+          title: Document
+          type: object
+          additionalProperties:
+            type: string
+            nullable: true
+        previously_authorized:
+          title: Previously authorized
+          type: boolean
+        document_id:
+          title: Document id
+          type: string
+          format: uuid
+          nullable: true
+        registered_agent:
+          title: Registered agent
+          type: object
+          additionalProperties:
+            type: string
+            nullable: true
+        authorized_person_name:
+          title: Authorized person name
+          type: string
+          minLength: 1
+        authorized_partner:
+          title: Authorized partner
+          type: object
+          additionalProperties:
+            type: string
+            nullable: true
+        general_partners:
+          type: array
+          items:
+            type: string
+            nullable: true
+        additional_data:
+          title: Additional data
+          type: object
+          additionalProperties:
+            type: string
+            nullable: true
+        use_singlefile_as_registered_agent:
+          title: Use singlefile as registered agent
+          type: boolean
+          default: false
+        is_draft:
+          title: Is draft
+          type: boolean
+          default: false
+        client_matter_number:
+          title: Client matter number
+          type: string
+          nullable: true
+  securitySchemes:
+    OAuth2ClientCredentials:
+      type: oauth2
+      description: 'OAuth 2.0 Client Credentials flow. Exchange client_id/client_secret at the token endpoint for a 1-hour bearer token; send it as Authorization: Bearer <token>.'
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.demo.singlefile.ai/o/token/
+          scopes:
+            read: Read access to entities, organizations, orders, documents, jurisdictions and tasks
+            write: Create and update entities, organizations, orders, documents and jurisdictions

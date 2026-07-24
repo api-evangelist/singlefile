@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  title: SingleFile External API Documentation documents schemas API
+  description: Formation and compliance documents
+  termsOfService: https://www.singlefile.io/
+  contact:
+    email: support@singlefile.io
+  license:
+    name: BSD License
+  version: v1
+  x-apievangelist-provenance:
+    method: searched
+    source: https://docs.singlefile.ai/ (ReadMe per-operation OpenAPI fragments merged; OAuth2 scheme added from the documented Authentication guide)
+    generated: '2026-07-21'
+servers:
+- url: https://api.demo.singlefile.ai/external-api/v1
+security:
+- OAuth2ClientCredentials:
+  - read
+  - write
+tags:
+- name: schemas
+  description: JSON schemas for order payloads by entity_type, filing_type and jurisdiction
+paths:
+  /schemas/list:
+    parameters: []
+    get:
+      operationId: schemas_list_list
+      description: Handle GET request for schema list.
+      responses:
+        '200':
+          description: ''
+      tags:
+      - schemas
+  /schemas:
+    parameters: []
+    get:
+      operationId: schemas_read
+      description: Retrieve JSON schema for order payloads based on entity_type, filing_type, and jurisdiction.
+      responses:
+        '200':
+          description: ''
+      tags:
+      - schemas
+components:
+  securitySchemes:
+    OAuth2ClientCredentials:
+      type: oauth2
+      description: 'OAuth 2.0 Client Credentials flow. Exchange client_id/client_secret at the token endpoint for a 1-hour bearer token; send it as Authorization: Bearer <token>.'
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.demo.singlefile.ai/o/token/
+          scopes:
+            read: Read access to entities, organizations, orders, documents, jurisdictions and tasks
+            write: Create and update entities, organizations, orders, documents and jurisdictions
