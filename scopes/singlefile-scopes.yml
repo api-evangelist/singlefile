@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/singlefile-openapi.yml
+schemes:
+- name: OAuth2ClientCredentials
+  source: openapi/singlefile-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.demo.singlefile.ai/o/token/
+  description: 'OAuth 2.0 Client Credentials flow. Exchange client_id/client_secret at the token
+    endpoint for a 1-hour bearer token; send it as Authorization: Bearer <token>.'
+scopes:
+- scope: read
+  description: Read access to entities, organizations, orders, documents, jurisdictions and
+    tasks
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/singlefile-openapi.yml
+- scope: write
+  description: Create and update entities, organizations, orders, documents and jurisdictions
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/singlefile-openapi.yml

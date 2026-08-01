@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.singlefile.ai/docs/api-basics
+format: custom-envelope
+envelope:
+  success: boolean
+  error:
+    code: string
+    message: string
+    validation_errors: object (field -> messages)
+example:
+  success: false
+  error:
+    code: VALIDATION_ERROR
+    message: Invalid order ID
+    validation_errors:
+      non_field_errors:
+      - Invalid order ID
+errors:
+- code: VALIDATION_ERROR
+  http_status: 400
+  meaning: Request payload failed validation
+  remediation: Inspect validation_errors for the offending fields
+- code: NOT_FOUND
+  http_status: 404
+  meaning: Requested resource does not exist
+  remediation: Verify the resource id
+- code: UNAUTHORIZED
+  http_status: 401
+  meaning: Missing or expired bearer token
+  remediation: Obtain a fresh token from /o/token/
+- code: RATE_LIMITED
+  http_status: 429
+  meaning: Rate limit exceeded
+  remediation: Back off; default 1000 req/hr, 60 req/min burst
+note: Codes VALIDATION_ERROR and NOT_FOUND are documented verbatim; UNAUTHORIZED/RATE_LIMITED inferred from documented auth
+  + rate-limit behavior.

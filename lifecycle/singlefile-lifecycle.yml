@@ -1,0 +1,16 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.singlefile.ai/
+versioning:
+  scheme: uri-path
+  current: v1
+  base: https://api.demo.singlefile.ai/external-api/v1
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No public deprecation policy found
+status_page: null
+sla:
+  url: null
+deprecated_operations: []
+note: Single API version (v1). No public status page, changelog, or deprecation policy located as of this pass.

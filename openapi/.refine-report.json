@@ -1,0 +1,35 @@
+{
+  "provider": "singlefile",
+  "sources": [
+    "singlefile-documents-api-openapi.yml",
+    "singlefile-entities-api-openapi.yml",
+    "singlefile-jurisdictions-api-openapi.yml",
+    "singlefile-orders-api-openapi.yml",
+    "singlefile-organizations-api-openapi.yml",
+    "singlefile-schemas-api-openapi.yml",
+    "singlefile-tasks-api-openapi.yml"
+  ],
+  "outputs": [
+    "singlefile-documents-api-openapi.yml",
+    "singlefile-entities-api-openapi.yml",
+    "singlefile-jurisdictions-api-openapi.yml",
+    "singlefile-orders-api-openapi.yml",
+    "singlefile-organizations-api-openapi.yml",
+    "singlefile-schemas-api-openapi.yml",
+    "singlefile-tasks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [
+    "singlefile-entities-api-openapi.yml: dangling $ref: #/components/requestBodies/ContactUpdate",
+    "singlefile-entities-api-openapi.yml: dangling $ref: #/components/requestBodies/DocumentUpload",
+    "singlefile-entities-api-openapi.yml: dangling $ref: #/components/requestBodies/EntityUpdate",
+    "singlefile-jurisdictions-api-openapi.yml: dangling $ref: #/components/requestBodies/JurisdictionUpdate",
+    "singlefile-orders-api-openapi.yml: dangling $ref: #/components/requestBodies/OrderDetail",
+    "singlefile-organizations-api-openapi.yml: dangling $ref: #/components/requestBodies/ContactUpdate",
+    "singlefile-organizations-api-openapi.yml: dangling $ref: #/components/requestBodies/DocumentUpload",
+    "singlefile-organizations-api-openapi.yml: dangling $ref: #/components/requestBodies/EntityCreate"
+  ],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

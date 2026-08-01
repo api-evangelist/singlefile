@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: generated
+skills:
+- file: singlefile-business-entity-formation.md
+  name: Form a business entity with SingleFile
+  api: openapi/singlefile-openapi.yml
+  operations: [organizations_create_create, organizations_entity_create_create, entities_jurisdictions_create_create, schemas_read, create_order, place_order, get_order]
+- file: singlefile-ein-filing.md
+  name: File for an EIN with SingleFile
+  api: openapi/singlefile-openapi.yml
+  operations: [entities_list_list, entities_read, schemas_read, create_order, place_order, get_order, entities_documents_list]
+- file: singlefile-annual-report-filing.md
+  name: File an annual report with SingleFile
+  api: openapi/singlefile-openapi.yml
+  operations: [entities_list_list, entities_tasks_list, entities_jurisdictions_list, schemas_read, create_order, place_order, get_order]
+- file: singlefile-document-management.md
+  name: Manage entity documents with SingleFile
+  api: openapi/singlefile-openapi.yml
+  operations: [entities_documents_upload_create, entities_documents_list, organizations_documents_upload_create, organizations_documents_list, documents_read]

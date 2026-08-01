@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.singlefile.ai/ + https://www.singlefile.ai/
+standards:
+- id: oauth2
+  conforms: true
+  evidence: OAuth 2.0 client-credentials flow documented; oauth2 securityScheme in spec
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Custom error envelope {success,error:{code,message,validation_errors}}, not application/problem+json
+- id: rest-json
+  conforms: true
+  evidence: JSON request/response over HTTPS
+- id: pagination
+  conforms: true
+  evidence: page_number/page_size query params; count/next/previous/results response envelope
+- id: rate-limiting
+  conforms: true
+  evidence: Documented per-user and burst rate limits
+- id: webhooks
+  conforms: true
+  evidence: 11 documented webhook event types with retry/backoff
+- id: soc2-type-ii
+  conforms: true
+  evidence: SingleFile is SOC 2 Type II certified (AICPA SOC)

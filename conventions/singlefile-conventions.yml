@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.singlefile.ai/docs/api-basics + authentication + reference specs
+authentication:
+  style: oauth2-client-credentials
+  token_header: 'Authorization: Bearer <token>'
+  token_ttl_seconds: 3600
+  ref: authentication/singlefile-authentication.yml
+request_headers:
+  Accept: application/json
+  Content-Type: application/json
+pagination:
+  style: page-number
+  params:
+  - page_number
+  - page_size
+  also:
+  - ordering
+  - search
+  response_fields:
+  - count
+  - next
+  - previous
+  - results
+error_envelope:
+  shape: '{success:false, error:{code,message,validation_errors}}'
+  ref: errors/singlefile-error-codes.yml
+rate_limiting:
+  user: 1000 req/hour
+  burst: 60 req/minute
+  anonymous: 100 req
+  ref: rate-limits/singlefile-rate-limits.yml
+idempotency:
+  supported: false
+  note: No Idempotency-Key header documented for the REST API; webhook consumers are advised to implement idempotent handlers.
+versioning:
+  scheme: uri-path
+  current: v1
+  ref: lifecycle/singlefile-lifecycle.yml
+webhooks:
+  ref: asyncapi/singlefile-webhooks-asyncapi.yml
+  delivery: HTTPS only, retry with exponential backoff on 5xx

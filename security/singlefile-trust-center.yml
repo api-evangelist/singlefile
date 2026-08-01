@@ -1,0 +1,13 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+source: https://www.singlefile.ai/
+url: https://www.singlefile.ai/
+certifications:
+- SOC 2 Type II
+evidence:
+- source: https://www.singlefile.ai/
+  keywords:
+  - soc 2 type ii
+  - aicpa soc
+note: SingleFile states SOC 2 Type II certification (AICPA SOC) on its site. No dedicated trust.<domain> portal found.

@@ -1,0 +1,11 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.singlefile.ai/docs/authentication + https://docs.singlefile.ai/docs/getting-started
+sandbox:
+  name: Demo environment
+  base_url: https://api.demo.singlefile.ai/external-api/v1
+  token_url: https://api.demo.singlefile.ai/o/token/
+  access: SingleFile provisions client_id/client_secret for the demo environment on request
+test_values: []
+note: All published documentation targets the demo host (api.demo.singlefile.ai). Credentials are provider-issued; no self-serve
+  magic test values are published. Never invent test credentials.

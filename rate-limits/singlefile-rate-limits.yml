@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.singlefile.ai/docs/api-basics
+rate_limits:
+- name: user
+  limit_count: 1000
+  window: hour
+  scope: per user
+- name: burst
+  limit_count: 60
+  window: minute
+  scope: per user
+- name: anonymous
+  limit_count: 100
+  window: unspecified
+  scope: unauthenticated
+signaling:
+  documented_headers: null
+  note: Rate-limit values documented; response header names not published.

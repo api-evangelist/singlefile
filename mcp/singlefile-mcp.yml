@@ -1,0 +1,159 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/singlefile-openapi.yml
+note: No official hosted MCP server found. Candidate tool list derived one-per-operation from the reconstructed OpenAPI.
+server:
+  name: singlefile
+  transport: stdio
+tools:
+- name: create_order
+  description: POST /orders
+  source_operation: openapi/singlefile-openapi.yml#create_order
+- name: create_order_from_document_request
+  description: Create an order from the order document request.
+  source_operation: openapi/singlefile-openapi.yml#create_order_from_document_request
+- name: get_order_document_request
+  description: Get the order document request for user review.
+  source_operation: openapi/singlefile-openapi.yml#get_order_document_request
+- name: update_order_document_request
+  description: Update the order document request with user-provided data.
+  source_operation: openapi/singlefile-openapi.yml#update_order_document_request
+- name: documents_read
+  description: GET /documents/{document_id}
+  source_operation: openapi/singlefile-openapi.yml#documents_read
+- name: entities_contacts_create_create
+  description: View to create contacts for an entity
+  source_operation: openapi/singlefile-openapi.yml#entities_contacts_create_create
+- name: entities_contacts_list
+  description: View to list all contacts associated with an entity
+  source_operation: openapi/singlefile-openapi.yml#entities_contacts_list
+- name: entities_contacts_partial_update
+  description: View to retrieve and update a specific contact for an entity
+  source_operation: openapi/singlefile-openapi.yml#entities_contacts_partial_update
+- name: entities_contacts_read
+  description: View to retrieve and update a specific contact for an entity
+  source_operation: openapi/singlefile-openapi.yml#entities_contacts_read
+- name: entities_contacts_update
+  description: View to retrieve and update a specific contact for an entity
+  source_operation: openapi/singlefile-openapi.yml#entities_contacts_update
+- name: entities_create_create
+  description: Create a new entity.
+  source_operation: openapi/singlefile-openapi.yml#entities_create_create
+- name: entities_documents_list
+  description: GET /entities/{entity_id}/documents
+  source_operation: openapi/singlefile-openapi.yml#entities_documents_list
+- name: entities_documents_upload_create
+  description: POST /entities/{entity_id}/documents/upload
+  source_operation: openapi/singlefile-openapi.yml#entities_documents_upload_create
+- name: entities_jurisdictions_create_create
+  description: POST /entities/{entity_id}/jurisdictions/create
+  source_operation: openapi/singlefile-openapi.yml#entities_jurisdictions_create_create
+- name: entities_jurisdictions_list
+  description: GET /entities/{entity_id}/jurisdictions
+  source_operation: openapi/singlefile-openapi.yml#entities_jurisdictions_list
+- name: entities_list_list
+  description: View and list your entities.
+  source_operation: openapi/singlefile-openapi.yml#entities_list_list
+- name: entities_orders_list
+  description: GET /entities/{entity_id}/orders
+  source_operation: openapi/singlefile-openapi.yml#entities_orders_list
+- name: entities_partial_update
+  description: View to retrieve and update a specific entity
+  source_operation: openapi/singlefile-openapi.yml#entities_partial_update
+- name: entities_read
+  description: View to retrieve and update a specific entity
+  source_operation: openapi/singlefile-openapi.yml#entities_read
+- name: entities_update
+  description: View to retrieve and update a specific entity
+  source_operation: openapi/singlefile-openapi.yml#entities_update
+- name: entities_tasks_list
+  description: GET /entities/{entity_id}/tasks
+  source_operation: openapi/singlefile-openapi.yml#entities_tasks_list
+- name: get_order
+  description: GET /orders/{order_id}
+  source_operation: openapi/singlefile-openapi.yml#get_order
+- name: orders_partial_update
+  description: PATCH /orders/{order_id}
+  source_operation: openapi/singlefile-openapi.yml#orders_partial_update
+- name: place_order
+  description: POST /orders/{order_id}
+  source_operation: openapi/singlefile-openapi.yml#place_order
+- name: update_order
+  description: PUT /orders/{order_id}
+  source_operation: openapi/singlefile-openapi.yml#update_order
+- name: jurisdictions_dbas_create
+  description: List, create, delete, or update DBAs for a jurisdiction (collection).
+  source_operation: openapi/singlefile-openapi.yml#jurisdictions_dbas_create
+- name: jurisdictions_dbas_delete
+  description: List, create, delete, or update DBAs for a jurisdiction (collection).
+  source_operation: openapi/singlefile-openapi.yml#jurisdictions_dbas_delete
+- name: jurisdictions_dbas_list
+  description: List, create, delete, or update DBAs for a jurisdiction (collection).
+  source_operation: openapi/singlefile-openapi.yml#jurisdictions_dbas_list
+- name: jurisdictions_dbas_partial_update
+  description: List, create, delete, or update DBAs for a jurisdiction (collection).
+  source_operation: openapi/singlefile-openapi.yml#jurisdictions_dbas_partial_update
+- name: jurisdictions_partial_update
+  description: PATCH /jurisdictions/{jurisdiction_id}
+  source_operation: openapi/singlefile-openapi.yml#jurisdictions_partial_update
+- name: jurisdictions_read
+  description: GET /jurisdictions/{jurisdiction_id}
+  source_operation: openapi/singlefile-openapi.yml#jurisdictions_read
+- name: jurisdictions_update
+  description: PUT /jurisdictions/{jurisdiction_id}
+  source_operation: openapi/singlefile-openapi.yml#jurisdictions_update
+- name: organizations_contacts_create_create
+  description: View to create contacts for an organization
+  source_operation: openapi/singlefile-openapi.yml#organizations_contacts_create_create
+- name: organizations_contacts_list
+  description: View to list all contacts associated with an organization
+  source_operation: openapi/singlefile-openapi.yml#organizations_contacts_list
+- name: organizations_contacts_partial_update
+  description: View to retrieve and update a specific contact for an organization
+  source_operation: openapi/singlefile-openapi.yml#organizations_contacts_partial_update
+- name: organizations_contacts_read
+  description: View to retrieve and update a specific contact for an organization
+  source_operation: openapi/singlefile-openapi.yml#organizations_contacts_read
+- name: organizations_contacts_update
+  description: View to retrieve and update a specific contact for an organization
+  source_operation: openapi/singlefile-openapi.yml#organizations_contacts_update
+- name: organizations_create_create
+  description: POST /organizations/create
+  source_operation: openapi/singlefile-openapi.yml#organizations_create_create
+- name: organizations_documents_list
+  description: GET /organizations/{organization_id}/documents
+  source_operation: openapi/singlefile-openapi.yml#organizations_documents_list
+- name: organizations_documents_upload_create
+  description: POST /organizations/{organization_id}/documents/upload
+  source_operation: openapi/singlefile-openapi.yml#organizations_documents_upload_create
+- name: organizations_entities_list
+  description: GET /organizations/{organization_id}/entities
+  source_operation: openapi/singlefile-openapi.yml#organizations_entities_list
+- name: organizations_entity_create_create
+  description: POST /organizations/{organization_id}/entity/create
+  source_operation: openapi/singlefile-openapi.yml#organizations_entity_create_create
+- name: organizations_list_list
+  description: GET /organizations/list
+  source_operation: openapi/singlefile-openapi.yml#organizations_list_list
+- name: organizations_orders_list
+  description: GET /organizations/{organization_id}/orders
+  source_operation: openapi/singlefile-openapi.yml#organizations_orders_list
+- name: organizations_read
+  description: GET /organizations/{organization_id}
+  source_operation: openapi/singlefile-openapi.yml#organizations_read
+- name: organizations_tasks_list
+  description: GET /organizations/{organization_id}/tasks
+  source_operation: openapi/singlefile-openapi.yml#organizations_tasks_list
+- name: schemas_list_list
+  description: Handle GET request for schema list.
+  source_operation: openapi/singlefile-openapi.yml#schemas_list_list
+- name: schemas_read
+  description: Retrieve JSON schema for order payloads based on entity_type, filing_type, and j
+  source_operation: openapi/singlefile-openapi.yml#schemas_read
+- name: tasks_list_list
+  description: GET /tasks/list
+  source_operation: openapi/singlefile-openapi.yml#tasks_list_list
+- name: tasks_read
+  description: GET /tasks/{task_id}
+  source_operation: openapi/singlefile-openapi.yml#tasks_read

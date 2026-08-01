@@ -1,0 +1,66 @@
+# SingleFile Documentation
+
+> Documentation for SingleFile
+
+## Guides
+- [Welcome to SingleFile](https://docs.singlefile.ai/docs/getting-started.md)
+- [Quick Start Example](https://docs.singlefile.ai/docs/quick-start-example.md)
+- [Authentication](https://docs.singlefile.ai/docs/authentication.md)
+- [API Basics](https://docs.singlefile.ai/docs/api-basics.md)
+- [Webhook Setup](https://docs.singlefile.ai/docs/webhook-setup.md)
+- [Document Management Workflow](https://docs.singlefile.ai/docs/document-management-workflow.md)
+- [Annual Report Filing Workflow](https://docs.singlefile.ai/docs/annual-report-filing-workflow.md)
+- [Business Entity Formation Workflow](https://docs.singlefile.ai/docs/business-entity-formation-workflow.md)
+- [EIN Filing Workflow](https://docs.singlefile.ai/docs/ein-filing-workflow.md)
+
+## API Reference
+- [/entities/create](https://docs.singlefile.ai/reference/entities_create_create.md): Create a new entity.
+- [/entities/list](https://docs.singlefile.ai/reference/entities_list_list.md): View and list your entities.
+- [/entities/{entity_id}](https://docs.singlefile.ai/reference/entities_read.md): View to retrieve and update a specific entity
+- [/entities/{entity_id}](https://docs.singlefile.ai/reference/entities_update.md): View to retrieve and update a specific entity
+- [/entities/{entity_id}](https://docs.singlefile.ai/reference/entities_partial_update.md): View to retrieve and update a specific entity
+- [/entities/{entity_id}/contacts](https://docs.singlefile.ai/reference/entities_contacts_list.md): View to list all contacts associated with an entity
+- [/entities/{entity_id}/contacts/create](https://docs.singlefile.ai/reference/entities_contacts_create_create.md): View to create contacts for an entity
+- [/entities/{entity_id}/contacts/{contact_id}](https://docs.singlefile.ai/reference/entities_contacts_read.md): View to retrieve and update a specific contact for an entity
+- [/entities/{entity_id}/contacts/{contact_id}](https://docs.singlefile.ai/reference/entities_contacts_update.md): View to retrieve and update a specific contact for an entity
+- [/entities/{entity_id}/contacts/{contact_id}](https://docs.singlefile.ai/reference/entities_contacts_partial_update.md): View to retrieve and update a specific contact for an entity
+- [/entities/{entity_id}/documents](https://docs.singlefile.ai/reference/entities_documents_list.md)
+- [/entities/{entity_id}/documents/upload](https://docs.singlefile.ai/reference/entities_documents_upload_create.md)
+- [/entities/{entity_id}/jurisdictions](https://docs.singlefile.ai/reference/entities_jurisdictions_list.md)
+- [/entities/{entity_id}/jurisdictions/create](https://docs.singlefile.ai/reference/entities_jurisdictions_create_create.md)
+- [/entities/{entity_id}/orders](https://docs.singlefile.ai/reference/entities_orders_list.md)
+- [/entities/{entity_id}/tasks](https://docs.singlefile.ai/reference/entities_tasks_list.md)
+- [/orders](https://docs.singlefile.ai/reference/create_order-1.md)
+- [/orders/document-requests/{request_id}](https://docs.singlefile.ai/reference/get_order_document_request-1.md): Get the order document request for user review.
+- [/orders/document-requests/{request_id}](https://docs.singlefile.ai/reference/create_order_from_document_request-1.md): Create an order from the order document request.
+- [/orders/document-requests/{request_id}](https://docs.singlefile.ai/reference/update_order_document_request-1.md): Update the order document request with user-provided data.
+- [/orders/{order_id}](https://docs.singlefile.ai/reference/get_order-1.md)
+- [/orders/{order_id}](https://docs.singlefile.ai/reference/place_order-1.md)
+- [/orders/{order_id}](https://docs.singlefile.ai/reference/update_order-1.md)
+- [/orders/{order_id}](https://docs.singlefile.ai/reference/orders_partial_update-1.md)
+- [/organizations/create](https://docs.singlefile.ai/reference/organizations_create_create.md)
+- [/organizations/list](https://docs.singlefile.ai/reference/organizations_list_list.md)
+- [/organizations/{organization_id}](https://docs.singlefile.ai/reference/organizations_read.md)
+- [/organizations/{organization_id}/contacts](https://docs.singlefile.ai/reference/organizations_contacts_list.md): View to list all contacts associated with an organization
+- [/organizations/{organization_id}/contacts/create](https://docs.singlefile.ai/reference/organizations_contacts_create_create.md): View to create contacts for an organization
+- [/organizations/{organization_id}/contacts/{contact_id}](https://docs.singlefile.ai/reference/organizations_contacts_read.md): View to retrieve and update a specific contact for an organization
+- [/organizations/{organization_id}/contacts/{contact_id}](https://docs.singlefile.ai/reference/organizations_contacts_update.md): View to retrieve and update a specific contact for an organization
+- [/organizations/{organization_id}/contacts/{contact_id}](https://docs.singlefile.ai/reference/organizations_contacts_partial_update.md): View to retrieve and update a specific contact for an organization
+- [/organizations/{organization_id}/documents](https://docs.singlefile.ai/reference/organizations_documents_list.md)
+- [/organizations/{organization_id}/documents/upload](https://docs.singlefile.ai/reference/organizations_documents_upload_create.md)
+- [/organizations/{organization_id}/entities](https://docs.singlefile.ai/reference/organizations_entities_list.md)
+- [/organizations/{organization_id}/entity/create](https://docs.singlefile.ai/reference/organizations_entity_create_create.md)
+- [/organizations/{organization_id}/orders](https://docs.singlefile.ai/reference/organizations_orders_list.md)
+- [/organizations/{organization_id}/tasks](https://docs.singlefile.ai/reference/organizations_tasks_list.md)
+- [/schemas](https://docs.singlefile.ai/reference/schemas_read-1.md): Retrieve JSON schema for order payloads based on entity_type, filing_type, and jurisdiction.
+- [/schemas/list](https://docs.singlefile.ai/reference/schemas_list_list-1.md): Handle GET request for schema list.
+- [/documents/{document_id}](https://docs.singlefile.ai/reference/documents_read.md)
+- [/jurisdictions/{jurisdiction_id}](https://docs.singlefile.ai/reference/jurisdictions_read.md)
+- [/jurisdictions/{jurisdiction_id}](https://docs.singlefile.ai/reference/jurisdictions_update.md)
+- [/jurisdictions/{jurisdiction_id}](https://docs.singlefile.ai/reference/jurisdictions_partial_update.md)
+- [/jurisdictions/{jurisdiction_id}/dbas](https://docs.singlefile.ai/reference/jurisdictions_dbas_list.md): List, create, delete, or update DBAs for a jurisdiction (collection).
+- [/jurisdictions/{jurisdiction_id}/dbas](https://docs.singlefile.ai/reference/jurisdictions_dbas_create.md): List, create, delete, or update DBAs for a jurisdiction (collection).
+- [/jurisdictions/{jurisdiction_id}/dbas](https://docs.singlefile.ai/reference/jurisdictions_dbas_partial_update.md): List, create, delete, or update DBAs for a jurisdiction (collection).
+- [/jurisdictions/{jurisdiction_id}/dbas](https://docs.singlefile.ai/reference/jurisdictions_dbas_delete.md): List, create, delete, or update DBAs for a jurisdiction (collection).
+- [/tasks/list](https://docs.singlefile.ai/reference/tasks_list_list.md)
+- [/tasks/{task_id}](https://docs.singlefile.ai/reference/tasks_read.md)

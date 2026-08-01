@@ -1,0 +1,14 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for SingleFile External API
+  version: 1.0.0
+extends: openapi/singlefile-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-rating: 4
+    x-apievangelist-notes: Spec reconstructed by merging ReadMe per-operation OpenAPI fragments; OAuth2 client-credentials
+      scheme added from the documented Authentication guide.
+- target: $.info
+  update:
+    x-provider-industry: Legal / Corporate Compliance / Entity Management

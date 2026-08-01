@@ -1,0 +1,291 @@
+asyncapi: 3.0.0
+info:
+  title: SingleFile Webhooks
+  version: 1.0.0
+  description: Webhook event surface for SingleFile. Endpoints are configured in Profile Settings > Webhook Settings; deliveries
+    are HTTPS-only and retried with exponential backoff on 5xx.
+  x-apievangelist-provenance:
+    method: searched
+    source: https://docs.singlefile.ai/docs/webhook-setup
+    generated: '2026-07-21'
+defaultContentType: application/json
+channels:
+  webhooks:
+    address: '{subscriber_endpoint}'
+    title: Subscriber webhook endpoint
+    parameters:
+      subscriber_endpoint:
+        description: The HTTPS URL you configure to receive events
+    messages:
+      entity_created:
+        $ref: '#/components/messages/entity_created'
+      entity_updated:
+        $ref: '#/components/messages/entity_updated'
+      document_created:
+        $ref: '#/components/messages/document_created'
+      document_updated:
+        $ref: '#/components/messages/document_updated'
+      document_deleted:
+        $ref: '#/components/messages/document_deleted'
+      jurisdiction_created:
+        $ref: '#/components/messages/jurisdiction_created'
+      jurisdiction_updated:
+        $ref: '#/components/messages/jurisdiction_updated'
+      task_created:
+        $ref: '#/components/messages/task_created'
+      order_submitted:
+        $ref: '#/components/messages/order_submitted'
+      order_cancelled:
+        $ref: '#/components/messages/order_cancelled'
+      order_completed:
+        $ref: '#/components/messages/order_completed'
+operations:
+  receiveEvent:
+    action: receive
+    channel:
+      $ref: '#/channels/webhooks'
+    summary: Receive a SingleFile webhook event
+components:
+  messages:
+    entity_created:
+      name: entity.created
+      title: 'Entities: Entity created'
+      summary: Entity created
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            const: entity.created
+          order_id:
+            type: string
+            description: Present on order events, e.g. ord_12345
+          entity_id:
+            type: string
+            description: Related entity, e.g. ent_67890
+          status:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+    entity_updated:
+      name: entity.updated
+      title: 'Entities: Entity updated'
+      summary: Entity updated
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            const: entity.updated
+          order_id:
+            type: string
+            description: Present on order events, e.g. ord_12345
+          entity_id:
+            type: string
+            description: Related entity, e.g. ent_67890
+          status:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+    document_created:
+      name: document.created
+      title: 'Documents: Document available'
+      summary: Document available
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            const: document.created
+          order_id:
+            type: string
+            description: Present on order events, e.g. ord_12345
+          entity_id:
+            type: string
+            description: Related entity, e.g. ent_67890
+          status:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+    document_updated:
+      name: document.updated
+      title: 'Documents: Document updated'
+      summary: Document updated
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            const: document.updated
+          order_id:
+            type: string
+            description: Present on order events, e.g. ord_12345
+          entity_id:
+            type: string
+            description: Related entity, e.g. ent_67890
+          status:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+    document_deleted:
+      name: document.deleted
+      title: 'Documents: Document deleted'
+      summary: Document deleted
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            const: document.deleted
+          order_id:
+            type: string
+            description: Present on order events, e.g. ord_12345
+          entity_id:
+            type: string
+            description: Related entity, e.g. ent_67890
+          status:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+    jurisdiction_created:
+      name: jurisdiction.created
+      title: 'Jurisdictions: Jurisdiction added'
+      summary: Jurisdiction added
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            const: jurisdiction.created
+          order_id:
+            type: string
+            description: Present on order events, e.g. ord_12345
+          entity_id:
+            type: string
+            description: Related entity, e.g. ent_67890
+          status:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+    jurisdiction_updated:
+      name: jurisdiction.updated
+      title: 'Jurisdictions: Jurisdiction updated'
+      summary: Jurisdiction updated
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            const: jurisdiction.updated
+          order_id:
+            type: string
+            description: Present on order events, e.g. ord_12345
+          entity_id:
+            type: string
+            description: Related entity, e.g. ent_67890
+          status:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+    task_created:
+      name: task.created
+      title: 'Tasks: Task instance created'
+      summary: Task instance created
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            const: task.created
+          order_id:
+            type: string
+            description: Present on order events, e.g. ord_12345
+          entity_id:
+            type: string
+            description: Related entity, e.g. ent_67890
+          status:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+    order_submitted:
+      name: order.submitted
+      title: 'Orders: Order submitted'
+      summary: Order submitted
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            const: order.submitted
+          order_id:
+            type: string
+            description: Present on order events, e.g. ord_12345
+          entity_id:
+            type: string
+            description: Related entity, e.g. ent_67890
+          status:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+    order_cancelled:
+      name: order.cancelled
+      title: 'Orders: Order cancelled'
+      summary: Order cancelled
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            const: order.cancelled
+          order_id:
+            type: string
+            description: Present on order events, e.g. ord_12345
+          entity_id:
+            type: string
+            description: Related entity, e.g. ent_67890
+          status:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+    order_completed:
+      name: order.completed
+      title: 'Orders: Order completed'
+      summary: Order completed
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            const: order.completed
+          order_id:
+            type: string
+            description: Present on order events, e.g. ord_12345
+          entity_id:
+            type: string
+            description: Related entity, e.g. ent_67890
+          status:
+            type: string
+          timestamp:
+            type: string
+            format: date-time

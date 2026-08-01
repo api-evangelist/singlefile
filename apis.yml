@@ -1,27 +1,240 @@
 aid: singlefile
 name: SingleFile
-description: 'SingleFile is a company surfaced as a portfolio company of foundry-group and added to the
-  API Evangelist network as a stub for enrichment. Sector: compliance. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: SingleFile is an AI-powered entity management and corporate compliance platform for corporations, law firms,
+  and investment organizations. It automates business entity formation, EIN filing, annual report filing, registered agent
+  services, UCC filings, and Corporate Transparency Act (BOI/FinCEN) reporting across all 52 US jurisdictions. The SingleFile
+  External API (v1) exposes organizations, entities, contacts, jurisdictions, documents, orders, tasks, and filing schemas
+  over a REST/JSON interface secured with OAuth 2.0 client credentials, with webhooks for real-time order, document, entity,
+  jurisdiction, and task events. SingleFile is SOC 2 Type II certified.
 url: https://raw.githubusercontent.com/api-evangelist/singlefile/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - foundry-group
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: api-surface-enriched
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Compliance
-apis: []
+- Legal
+- Entity Management
+- Corporate Compliance
+- Registered Agent
+- Business Filings
+- Regulatory
+- API
+- Webhooks
+- OAuth
+apis:
+- aid: singlefile:singlefile-documents-api
+  name: SingleFile documents API
+  description: Formation and compliance documents
+  humanURL: https://docs.singlefile.ai/
+  baseURL: https://api.demo.singlefile.ai/external-api/v1
+  tags:
+  - documents
+  properties:
+  - type: OpenAPI
+    url: openapi/singlefile-documents-api-openapi.yml
+  - type: Documentation
+    url: https://docs.singlefile.ai/
+  - type: APIReference
+    url: https://docs.singlefile.ai/reference/
+  - type: GettingStarted
+    url: https://docs.singlefile.ai/docs/getting-started
+- aid: singlefile:singlefile-entities-api
+  name: SingleFile entities API
+  description: >-
+    Business entities — create, list, read, update, and their contacts, documents, jurisdictions, orders
+    and tasks
+  humanURL: https://docs.singlefile.ai/
+  baseURL: https://api.demo.singlefile.ai/external-api/v1
+  tags:
+  - entities
+  properties:
+  - type: OpenAPI
+    url: openapi/singlefile-entities-api-openapi.yml
+  - type: Documentation
+    url: https://docs.singlefile.ai/
+  - type: APIReference
+    url: https://docs.singlefile.ai/reference/
+  - type: GettingStarted
+    url: https://docs.singlefile.ai/docs/getting-started
+- aid: singlefile:singlefile-jurisdictions-api
+  name: SingleFile jurisdictions API
+  description: Entity jurisdictions and DBAs across US states
+  humanURL: https://docs.singlefile.ai/
+  baseURL: https://api.demo.singlefile.ai/external-api/v1
+  tags:
+  - jurisdictions
+  properties:
+  - type: OpenAPI
+    url: openapi/singlefile-jurisdictions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.singlefile.ai/
+  - type: APIReference
+    url: https://docs.singlefile.ai/reference/
+  - type: GettingStarted
+    url: https://docs.singlefile.ai/docs/getting-started
+- aid: singlefile:singlefile-orders-api
+  name: SingleFile orders API
+  description: Filing orders — create, place, update, and document-request driven order creation
+  humanURL: https://docs.singlefile.ai/
+  baseURL: https://api.demo.singlefile.ai/external-api/v1
+  tags:
+  - orders
+  properties:
+  - type: OpenAPI
+    url: openapi/singlefile-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.singlefile.ai/
+  - type: APIReference
+    url: https://docs.singlefile.ai/reference/
+  - type: GettingStarted
+    url: https://docs.singlefile.ai/docs/getting-started
+- aid: singlefile:singlefile-organizations-api
+  name: SingleFile organizations API
+  description: >-
+    Organizations that own entities — CRUD plus contacts, documents, entities, orders and tasks
+  humanURL: https://docs.singlefile.ai/
+  baseURL: https://api.demo.singlefile.ai/external-api/v1
+  tags:
+  - organizations
+  properties:
+  - type: OpenAPI
+    url: openapi/singlefile-organizations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.singlefile.ai/
+  - type: APIReference
+    url: https://docs.singlefile.ai/reference/
+  - type: GettingStarted
+    url: https://docs.singlefile.ai/docs/getting-started
+- aid: singlefile:singlefile-schemas-api
+  name: SingleFile schemas API
+  description: JSON schemas for order payloads by entity_type, filing_type and jurisdiction
+  humanURL: https://docs.singlefile.ai/
+  baseURL: https://api.demo.singlefile.ai/external-api/v1
+  tags:
+  - schemas
+  properties:
+  - type: OpenAPI
+    url: openapi/singlefile-schemas-api-openapi.yml
+  - type: Documentation
+    url: https://docs.singlefile.ai/
+  - type: APIReference
+    url: https://docs.singlefile.ai/reference/
+  - type: GettingStarted
+    url: https://docs.singlefile.ai/docs/getting-started
+- aid: singlefile:singlefile-tasks-api
+  name: SingleFile tasks API
+  description: Compliance tasks and deadlines
+  humanURL: https://docs.singlefile.ai/
+  baseURL: https://api.demo.singlefile.ai/external-api/v1
+  tags:
+  - tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/singlefile-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.singlefile.ai/
+  - type: APIReference
+    url: https://docs.singlefile.ai/reference/
+  - type: GettingStarted
+    url: https://docs.singlefile.ai/docs/getting-started
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/singlefile-trust-center.yml
+- type: DomainSecurity
+  url: security/singlefile-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/singlefile-agentic-access.yml
+- type: OAuthScopes
+  url: scopes/singlefile-scopes.yml
+- type: Authentication
+  url: authentication/singlefile-authentication.yml
 - type: Website
-  url: https://www.singlefile.io
+  url: https://www.singlefile.ai
+- type: DeveloperPortal
+  url: https://docs.singlefile.ai/
+- type: Documentation
+  url: https://docs.singlefile.ai/
+- type: APIReference
+  url: https://docs.singlefile.ai/reference/
+- type: GettingStarted
+  url: https://docs.singlefile.ai/docs/getting-started
+- type: Blog
+  url: https://www.singlefile.ai/blog/
+- type: SignUp
+  url: https://www.singlefile.ai/get-started/
+- type: Login
+  url: https://app.singlefile.ai/
+- type: TermsOfService
+  url: https://www.singlefile.ai/terms-of-service/
+- type: PrivacyPolicy
+  url: https://www.singlefile.ai/privacy-policy/
+- type: Support
+  url: https://www.singlefile.ai/faqs/
+- type: LLMsTxt
+  url: llms/singlefile-llms.txt
+- type: MCPServer
+  url: mcp/singlefile-mcp.yml
+- type: Overlay
+  url: overlays/singlefile-openapi-overlay.yaml
+- type: Conformance
+  url: conformance/singlefile-conformance.yml
+- type: Compliance
+  url: https://www.singlefile.ai/
+- type: ErrorCatalog
+  url: errors/singlefile-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/singlefile-lifecycle.yml
+- type: Sandbox
+  url: sandbox/singlefile-sandbox.yml
+- type: Conventions
+  url: conventions/singlefile-conventions.yml
+- type: DataModel
+  url: data-model/singlefile-data-model.yml
+- type: RateLimits
+  url: rate-limits/singlefile-rate-limits.yml
+- type: AsyncAPI
+  url: asyncapi/singlefile-webhooks-asyncapi.yml
+- type: Webhooks
+  url: asyncapi/singlefile-webhooks-asyncapi.yml
+- type: AgentSkill
+  url: skills/_index.yml
+image: https://www.singlefile.ai/favicon.ico
+rate_limits:
+- name: user
+  limit_count: 1000
+  window: hour
+- name: burst
+  limit_count: 60
+  window: minute
+- name: anonymous
+  limit_count: 100
+  window: unspecified
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 22
+  pass: local-v1

@@ -1,0 +1,62 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/singlefile-openapi.yml
+entities:
+- Organization
+- Entity
+- Contact
+- Document
+- Jurisdiction
+- Order
+- Task
+- DBA
+- Schema
+id_prefixes:
+  Order: ord_
+  Entity: ent_
+relationships:
+- from: Organization
+  type: has_many
+  to: Entity
+  via: organization_id
+- from: Organization
+  type: has_many
+  to: Contact
+- from: Organization
+  type: has_many
+  to: Document
+- from: Organization
+  type: has_many
+  to: Order
+- from: Organization
+  type: has_many
+  to: Task
+- from: Entity
+  type: has_many
+  to: Contact
+  via: entity_id
+- from: Entity
+  type: has_many
+  to: Document
+  via: entity_id
+- from: Entity
+  type: has_many
+  to: Jurisdiction
+  via: entity_id
+- from: Entity
+  type: has_many
+  to: Order
+  via: entity_id
+- from: Entity
+  type: has_many
+  to: Task
+  via: entity_id
+- from: Jurisdiction
+  type: has_many
+  to: DBA
+  via: jurisdiction_id
+- from: Order
+  type: belongs_to
+  to: Entity
+  via: entity_id
+note: Derived from OpenAPI path hierarchy and schema names; id-prefixes ord_/ent_ observed in documented webhook payloads.
