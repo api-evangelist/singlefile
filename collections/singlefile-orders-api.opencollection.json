@@ -1,0 +1,165 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SingleFile External API Documentation documents orders API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.demo.singlefile.ai/o/token/",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "create_order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "get_order_document_request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/orders/document-requests/:request_id",
+            "params": [
+              {
+                "name": "request_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get the order document request for user review."
+        },
+        {
+          "info": {
+            "name": "create_order_from_document_request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/orders/document-requests/:request_id",
+            "params": [
+              {
+                "name": "request_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create an order from the order document request."
+        },
+        {
+          "info": {
+            "name": "update_order_document_request",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/orders/document-requests/:request_id",
+            "params": [
+              {
+                "name": "request_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update the order document request with user-provided data."
+        },
+        {
+          "info": {
+            "name": "get_order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/orders/:order_id",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "place_order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/orders/:order_id",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "update_order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/orders/:order_id",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "orders_partial_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/orders/:order_id",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1761 @@
+{
+  "item": [
+    {
+      "id": "d9a6fa39-84f3-424b-910a-039d6766a0f5",
+      "name": "organizations",
+      "description": {
+        "content": "Organizations that own entities — CRUD plus contacts, documents, entities, orders and tasks",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "18a0ec44-53f3-4ae2-ad16-7b9a7ec9a7a8",
+          "name": "organizations contacts create create",
+          "request": {
+            "name": "organizations contacts create create",
+            "description": {
+              "content": "View to create contacts for an organization",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id",
+                "contacts",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"primary_contact\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"middle_name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"address\": {\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    },\n    \"is_active\": true\n  },\n  \"billing_contact\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"middle_name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"address\": {\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    },\n    \"is_active\": true\n  },\n  \"authorized_contact_override\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"middle_name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"address\": {\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    },\n    \"is_active\": true\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b82d6c96-0d57-47e8-bc73-619a6e7a3626",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id",
+                    "contacts",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"primary_contact\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"middle_name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"address\": {\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    },\n    \"is_active\": true\n  },\n  \"billing_contact\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"middle_name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"address\": {\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    },\n    \"is_active\": true\n  },\n  \"authorized_contact_override\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"middle_name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"address\": {\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    },\n    \"is_active\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"primary_contact\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"middle_name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"address\": {\n      \"id\": \"string\",\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    },\n    \"is_active\": true\n  },\n  \"billing_contact\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"middle_name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"address\": {\n      \"id\": \"string\",\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    },\n    \"is_active\": true\n  },\n  \"authorized_contact_override\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"middle_name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"address\": {\n      \"id\": \"string\",\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    },\n    \"is_active\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f1dce032-2cc3-4a06-b150-a551ed802b52",
+          "name": "organizations contacts list",
+          "request": {
+            "name": "organizations contacts list",
+            "description": {
+              "content": "View to list all contacts associated with an organization",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id",
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search term."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "84abc070-b0e6-40af-a075-2308b9f835d0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id",
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 7717,\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"email\": \"EEoFBoBCYh@FvklupoRsOYRVMykceCQ.ey\",\n      \"phone\": \"string\",\n      \"roles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"created_at\": \"1976-08-10T16:46:32.940Z\",\n      \"updated_at\": \"1987-02-02T19:49:23.047Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"email\": \"qnWJjtiJzPbXcn@OCxUHtwjcugVwoJUU.ktc\",\n      \"phone\": \"strin\",\n      \"roles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"created_at\": \"1957-04-13T19:11:06.430Z\",\n      \"updated_at\": \"1964-11-28T08:12:15.668Z\"\n    }\n  ],\n  \"next\": \"http://ZqqTDWt.cray-7Rx,S,xYXe\",\n  \"previous\": \"http://GmCjcOZSEdlLzDRJrPAGBgohAOiaxbrhq.xttv9Ce.qJAnDRAFb5343O++pR,or2HEvdrkCpETbs4j-fg5TMwBSHcSuT\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a65ffe23-0ec0-4e45-a255-3932cf64a026",
+          "name": "organizations contacts partial update",
+          "request": {
+            "name": "organizations contacts partial update",
+            "description": {
+              "content": "View to retrieve and update a specific contact for an organization",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id",
+                "contacts",
+                ":contact_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "contact_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "6491cc65-746c-4e57-9161-9e2081376aa6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id",
+                    "contacts",
+                    ":contact_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contact_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"email\": \"z0e@lKZtTfRMkufFywnwlwgAlxmNeoT.zpfa\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"middle_name\": \"string\",\n  \"phone\": \"string\",\n  \"address\": {\n    \"id\": \"string\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"country_code\": \"<string>\",\n    \"country_area\": \"<string>\",\n    \"city_area\": \"<string>\",\n    \"sorting_code\": \"<string>\"\n  },\n  \"is_active\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7a2975d3-51ca-4800-8495-1d66986d1bfd",
+          "name": "organizations contacts read",
+          "request": {
+            "name": "organizations contacts read",
+            "description": {
+              "content": "View to retrieve and update a specific contact for an organization",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id",
+                "contacts",
+                ":contact_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "contact_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "58cb3ee6-dbf8-461c-92a8-b81ef744c70e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id",
+                    "contacts",
+                    ":contact_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contact_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"email\": \"UBr66rLoGmOPwe@LFBampQzkHvHlIa.uczn\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"first_name\": \"string\",\n  \"middle_name\": \"string\",\n  \"last_name\": \"string\",\n  \"phone\": \"string\",\n  \"address\": {\n    \"id\": \"string\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"country_code\": \"<string>\",\n    \"country_area\": \"<string>\",\n    \"city_area\": \"<string>\",\n    \"sorting_code\": \"<string>\"\n  },\n  \"roles\": [\n    \"string\",\n    \"string\"\n  ],\n  \"created_at\": \"2024-07-11T22:23:35.073Z\",\n  \"updated_at\": \"2010-01-16T05:16:33.576Z\",\n  \"updated_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70c2f12f-3113-4074-8125-ab378718ba05",
+          "name": "organizations contacts update",
+          "request": {
+            "name": "organizations contacts update",
+            "description": {
+              "content": "View to retrieve and update a specific contact for an organization",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id",
+                "contacts",
+                ":contact_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "contact_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "8f5da835-c928-49d7-aa65-6facb2a7b2af",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id",
+                    "contacts",
+                    ":contact_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contact_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"email\": \"z0e@lKZtTfRMkufFywnwlwgAlxmNeoT.zpfa\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"middle_name\": \"string\",\n  \"phone\": \"string\",\n  \"address\": {\n    \"id\": \"string\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"country_code\": \"<string>\",\n    \"country_area\": \"<string>\",\n    \"city_area\": \"<string>\",\n    \"sorting_code\": \"<string>\"\n  },\n  \"is_active\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "909e1dfc-399c-4a14-b4ea-cd159845a8ef",
+          "name": "organizations create create",
+          "request": {
+            "name": "organizations create create",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"domain\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"do_not_email\": \"<boolean>\",\n  \"send_all_state_notice\": \"<boolean>\",\n  \"invoice_only\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7c499d1e-1b90-44b2-8ce6-52ead3f11628",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"domain\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"do_not_email\": \"<boolean>\",\n  \"send_all_state_notice\": \"<boolean>\",\n  \"invoice_only\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"domain\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"do_not_email\": \"<boolean>\",\n  \"send_all_state_notice\": \"<boolean>\",\n  \"invoice_only\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "edb0f3d9-7887-4d4f-b5ea-fae4361c889f",
+          "name": "organizations documents list",
+          "request": {
+            "name": "organizations documents list",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id",
+                "documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "entity_id",
+                  "value": "<string>",
+                  "description": "entity_id"
+                },
+                {
+                  "disabled": false,
+                  "key": "jurisdiction",
+                  "value": "<string>",
+                  "description": "jurisdiction"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_before",
+                  "value": "<string>",
+                  "description": "created_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_after",
+                  "value": "<string>",
+                  "description": "created_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search term."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f85f919-309a-4773-bc0b-481e75891aac",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id",
+                    "documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entity_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "jurisdiction",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 7533,\n  \"results\": [\n    {\n      \"document_type\": \"string\",\n      \"filing_type\": \"string\",\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"entity_name\": \"string\",\n      \"organization_id\": \"string\",\n      \"entity_id\": \"string\",\n      \"jurisdiction\": \"string\",\n      \"certified\": true,\n      \"created_at\": \"2021-06-09T05:12:20.748Z\"\n    },\n    {\n      \"document_type\": \"string\",\n      \"filing_type\": \"string\",\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"entity_name\": \"string\",\n      \"organization_id\": \"string\",\n      \"entity_id\": \"string\",\n      \"jurisdiction\": \"string\",\n      \"certified\": true,\n      \"created_at\": \"1994-03-07T06:43:16.585Z\"\n    }\n  ],\n  \"next\": \"https://aJNrwsliYYwAgkmyVj.vyNEvYbCngtfR6Nox29sz6OJDx3y.5.2lYlBCFU0eObwU2uefqYa-s1qEPy4\",\n  \"previous\": \"https://qU.wjlMxeoA,RnuTnToJuW\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "262b3316-e914-4028-82ce-1998e21250cf",
+          "name": "organizations documents upload create",
+          "request": {
+            "name": "organizations documents upload create",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id",
+                "documents",
+                "upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "db5b231e-f625-4a74-94d9-cba5b09bb169",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id",
+                    "documents",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"filing_type\": \"string\",\n  \"file\": \"https://ZQHCZubBQzxLSynQMMgZiAm.vlsIFmQmqb8W7LVLisxmkC5We0Yimh9Op+8fERa6wr3-\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"entity_id\": \"8cc91396-3134-df0c-5e22-4110ed07f7d7\",\n  \"organization_id\": \"7ccde81b-498c-bd84-1209-ef3f2e021174\",\n  \"jurisdiction\": \"string\",\n  \"document_type\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a737ad0f-dd03-42fd-9dd0-aff3ea576d6e",
+          "name": "organizations entities list",
+          "request": {
+            "name": "organizations entities list",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id",
+                "entities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search term."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca3f33ed-f5cd-4a72-99ed-2746cf846e5c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id",
+                    "entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 4814,\n  \"results\": [\n    {\n      \"name\": \"string\",\n      \"id\": \"string\",\n      \"entity_type\": \"Benefit Professional Corporation\",\n      \"organization_id\": \"string\",\n      \"created_at\": \"1992-07-27T16:59:05.923Z\",\n      \"updated_at\": \"1989-01-05T10:03:44.355Z\"\n    },\n    {\n      \"name\": \"string\",\n      \"id\": \"string\",\n      \"entity_type\": \"Professional Limited Liability Company\",\n      \"organization_id\": \"string\",\n      \"created_at\": \"1965-07-28T16:48:32.804Z\",\n      \"updated_at\": \"1986-06-02T16:43:06.507Z\"\n    }\n  ],\n  \"next\": \"https://VVAaySlOiMIMdXaqYOcesWFBwTMemKQ.lgsbx0e9tZk-rUDpnTshY,DMCoUXAcLQmY.ZfFc\",\n  \"previous\": \"https://ddwfcPxQc.vngO7EfUpUzrGOgcAyqu5FCc1fIDpwvDPvy0KHZxzV71E51LWHogEU7Hot\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b1f9513-a5ee-48e2-bb88-7be667a0c3db",
+          "name": "organizations entity create create",
+          "request": {
+            "name": "organizations entity create create",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id",
+                "entity",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "f4852314-5f74-4de5-a7a8-f1c3547e6375",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id",
+                    "entity",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"entity_type\": \"string\",\n  \"mailing_address\": {\n    \"id\": \"string\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"country_code\": \"<string>\",\n    \"country_area\": \"<string>\",\n    \"city_area\": \"<string>\",\n    \"sorting_code\": \"<string>\"\n  },\n  \"primary_address\": {\n    \"id\": \"string\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"postal_code\": \"<string>\",\n    \"country\": \"<string>\",\n    \"country_code\": \"<string>\",\n    \"country_area\": \"<string>\",\n    \"city_area\": \"<string>\",\n    \"sorting_code\": \"<string>\"\n  },\n  \"primary_contact\": {\n    \"email\": \"2f3in@hCgQ.yje\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"id\": \"string\",\n    \"job_title\": \"string\",\n    \"telephone_number\": \"string\",\n    \"address\": {\n      \"id\": \"string\",\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    }\n  },\n  \"jurisdictions\": [\n    {\n      \"id\": 170,\n      \"serializer\": \"string\",\n      \"local_address\": {\n        \"id\": 6763,\n        \"serializer\": \"string\",\n        \"state_long_name\": \"string\",\n        \"external_id\": \"01f2b336-c41c-fc5a-e82a-16c0f3cb3f87\",\n        \"street_address\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"postal_code\": \"string\",\n        \"country\": \"string\",\n        \"country_code\": \"string\",\n        \"country_area\": \"string\",\n        \"city_area\": \"string\",\n        \"sorting_code\": \"string\"\n      },\n      \"is_primary\": \"string\",\n      \"is_foreign_qualified\": \"string\",\n      \"annual_report_data\": \"string\",\n      \"annual_report_due_date\": \"string\",\n      \"status\": \"string\",\n      \"is_new_entity\": false,\n      \"is_ra\": \"string\",\n      \"external_id\": \"e4e78f44-9c13-bf76-b1aa-cc61ba2e33a1\",\n      \"registration_type\": \"primary\",\n      \"name\": \"string\",\n      \"jurisdiction_type\": \"country\",\n      \"ubi\": \"string\",\n      \"access_code\": \"string\",\n      \"ra_name\": \"string\",\n      \"is_annual_report\": true,\n      \"is_transparency_act\": true,\n      \"is_dfpi_vcc\": false,\n      \"is_auto_ar_override\": false,\n      \"registration_date\": \"1997-02-26\",\n      \"expiration_date\": \"1991-03-26\",\n      \"tax_number\": \"string\",\n      \"stripe_subs_id_ra_service\": \"string\",\n      \"stripe_subs_id_annual_report\": \"string\",\n      \"stripe_subs_id_dfpi_vcc\": \"string\",\n      \"fictitious_name\": \"string\",\n      \"reinstatement_date\": \"1986-07-31\",\n      \"service_end_date\": \"1958-10-24\",\n      \"credentials\": \"string\",\n      \"annual_report_due_date_override\": \"2017-12-08\",\n      \"entity\": 5559,\n      \"parent_jurisdiction\": 7288,\n      \"registered_agent\": \"string\"\n    },\n    {\n      \"id\": 17,\n      \"serializer\": \"string\",\n      \"local_address\": {\n        \"id\": 5715,\n        \"serializer\": \"string\",\n        \"state_long_name\": \"string\",\n        \"external_id\": \"4bcd69d1-bc29-23ee-dbfc-a678c2fa59f0\",\n        \"street_address\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"postal_code\": \"string\",\n        \"country\": \"string\",\n        \"country_code\": \"string\",\n        \"country_area\": \"string\",\n        \"city_area\": \"string\",\n        \"sorting_code\": \"string\"\n      },\n      \"is_primary\": \"string\",\n      \"is_foreign_qualified\": \"string\",\n      \"annual_report_data\": \"string\",\n      \"annual_report_due_date\": \"string\",\n      \"status\": \"string\",\n      \"is_new_entity\": false,\n      \"is_ra\": \"string\",\n      \"external_id\": \"f89417b5-68fc-df9d-36da-a8c4ef1db4c5\",\n      \"registration_type\": \"primary\",\n      \"name\": \"string\",\n      \"jurisdiction_type\": \"state\",\n      \"ubi\": \"string\",\n      \"access_code\": \"string\",\n      \"ra_name\": \"string\",\n      \"is_annual_report\": true,\n      \"is_transparency_act\": true,\n      \"is_dfpi_vcc\": true,\n      \"is_auto_ar_override\": false,\n      \"registration_date\": \"2017-01-07\",\n      \"expiration_date\": \"1960-02-08\",\n      \"tax_number\": \"string\",\n      \"stripe_subs_id_ra_service\": \"string\",\n      \"stripe_subs_id_annual_report\": \"string\",\n      \"stripe_subs_id_dfpi_vcc\": \"string\",\n      \"fictitious_name\": \"string\",\n      \"reinstatement_date\": \"1985-02-06\",\n      \"service_end_date\": \"1979-05-01\",\n      \"credentials\": \"string\",\n      \"annual_report_due_date_override\": \"2015-05-09\",\n      \"entity\": 4875,\n      \"parent_jurisdiction\": 978,\n      \"registered_agent\": \"string\"\n    }\n  ],\n  \"organization_id\": \"74bc5882-d91b-35dc-66a9-d26f88c153f5\",\n  \"primary_jurisdiction\": \"string\",\n  \"nature_of_business\": \"string\",\n  \"specific_business_purpose\": \"string\",\n  \"fein\": \"string\",\n  \"taxid_type\": \"FOREIGN\",\n  \"taxid\": \"string\",\n  \"telephone_number\": \"string\",\n  \"website_url\": \"string\",\n  \"fiscal_year_end\": \"2012-12-07\",\n  \"incorporator\": {\n    \"email\": \"B9A@aZICedtVC.uge\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"id\": \"string\",\n    \"job_title\": \"string\",\n    \"telephone_number\": \"string\",\n    \"address\": {\n      \"id\": \"string\",\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    }\n  },\n  \"entity_authorized_contact\": {\n    \"email\": \"UH0PGtax30j7XW@rRTOSOiXzIeOZstsFXDGBgNN.qwv\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"id\": \"string\",\n    \"job_title\": \"string\",\n    \"telephone_number\": \"string\",\n    \"address\": {\n      \"id\": \"string\",\n      \"street_address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"country_code\": \"<string>\",\n      \"country_area\": \"<string>\",\n      \"city_area\": \"<string>\",\n      \"sorting_code\": \"<string>\"\n    }\n  },\n  \"gross_assets\": [\n    {\n      \"date\": \"1963-04-03\",\n      \"assets\": \"string\"\n    },\n    {\n      \"date\": \"1994-05-13\",\n      \"assets\": \"string\"\n    }\n  ],\n  \"share_classes\": [\n    {\n      \"class_name\": \"string\",\n      \"authorized_shares\": -8206140476063480000,\n      \"start_date\": \"1976-11-28\",\n      \"par_value\": \"string\",\n      \"issued_shares\": 974991205145606100\n    },\n    {\n      \"class_name\": \"string\",\n      \"authorized_shares\": 4239120654437523500,\n      \"start_date\": \"1972-11-13\",\n      \"par_value\": \"string\",\n      \"issued_shares\": 5935645196946383000\n    }\n  ],\n  \"governing_persons\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"name\": \"string\",\n      \"is_organization\": \"string\",\n      \"created_at\": \"1960-09-30T04:23:16.326Z\",\n      \"updated_at\": \"1965-05-15T03:07:50.493Z\",\n      \"first_name\": \"string\",\n      \"middle_name\": \"string\",\n      \"last_name\": \"string\",\n      \"governing_entity_name\": \"string\",\n      \"is_director\": false,\n      \"address\": \"string\",\n      \"appointment_date\": \"1951-03-14T17:29:59.759Z\",\n      \"expiration_date\": \"2014-01-11T10:49:17.249Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"name\": \"string\",\n      \"is_organization\": \"string\",\n      \"created_at\": \"1972-03-02T09:24:38.646Z\",\n      \"updated_at\": \"1981-10-23T00:25:44.932Z\",\n      \"first_name\": \"string\",\n      \"middle_name\": \"string\",\n      \"last_name\": \"string\",\n      \"governing_entity_name\": \"string\",\n      \"is_director\": false,\n      \"address\": \"string\",\n      \"appointment_date\": \"1974-05-11T23:37:52.419Z\",\n      \"expiration_date\": \"1960-08-22T09:45:26.260Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98bc090f-ff3f-428d-9824-6771d7e3fb16",
+          "name": "organizations list list",
+          "request": {
+            "name": "organizations list list",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search term."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "991daecf-3f35-43de-8cf9-0492bae2436f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 4846,\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"representing_organizations\": \"string\",\n      \"primary_contact_email\": \"string\",\n      \"billing_contact_email\": \"string\",\n      \"created_at\": \"1995-01-05T06:54:57.447Z\",\n      \"updated_at\": \"1960-01-26T04:56:16.988Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"representing_organizations\": \"string\",\n      \"primary_contact_email\": \"string\",\n      \"billing_contact_email\": \"string\",\n      \"created_at\": \"1972-03-24T06:11:36.606Z\",\n      \"updated_at\": \"1984-02-04T09:07:20.808Z\"\n    }\n  ],\n  \"next\": \"https://KybOGQlKPmAztJwsEMfO.hhEIYuZQdjw8\",\n  \"previous\": \"https://VQecPEDCmj.bypVaR4gXSq5o+,8i7J\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17829546-ea1d-4526-929c-4e31d31f82a7",
+          "name": "organizations orders list",
+          "request": {
+            "name": "organizations orders list",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id",
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search term."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "300b1cf6-ab2b-441f-b6a8-c319d1fdae89",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 9562,\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"order_id\": \"string\",\n      \"display_name\": \"string\",\n      \"filing_type\": \"OTHER\",\n      \"entity_id\": \"string\",\n      \"entity_name\": \"string\",\n      \"status\": \"string\",\n      \"created_at\": \"1972-05-08T02:58:56.815Z\",\n      \"created_by\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"order_id\": \"string\",\n      \"display_name\": \"string\",\n      \"filing_type\": \"DFPI_VCC_REGISTRATION\",\n      \"entity_id\": \"string\",\n      \"entity_name\": \"stri\",\n      \"status\": \"string\",\n      \"created_at\": \"1982-02-23T07:11:40.844Z\",\n      \"created_by\": \"string\"\n    }\n  ],\n  \"next\": \"http://SSeZg.exThqc.uicAgJj8+S.pwqDf4FtjnPNdDbKql6t-QSVop85AHlj,+9ZEg\",\n  \"previous\": \"http://GxirXlOVkqAvhATORlafTjTMPw.nupgeEjcJ4CeGMvVYqYU-tXolMbnGGh.csOMq\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79349d51-287e-40e0-bf74-5fb1e6da6e3e",
+          "name": "organizations read",
+          "request": {
+            "name": "organizations read",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b4ee70d3-c917-4983-a29c-023965440b50",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"representing_organizations\": \"string\",\n  \"primary_contact_email\": \"string\",\n  \"billing_contact_email\": \"string\",\n  \"authorized_signatory_email\": \"string\",\n  \"created_at\": \"1989-09-24T22:22:43.606Z\",\n  \"updated_at\": \"2025-08-17T13:28:46.827Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "14638841-cbd6-4bda-adf3-92258b37a315",
+          "name": "organizations tasks list",
+          "request": {
+            "name": "organizations tasks list",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organization_id",
+                "tasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search term."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "35a0291d-8992-4311-89ad-b86197943d6f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organization_id",
+                    "tasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 7710,\n  \"results\": [\n    {\n      \"due_by\": \"1975-05-03\",\n      \"id\": \"string\",\n      \"responsible_user_email\": \"string\",\n      \"entity_id\": \"string\",\n      \"status\": \"NONE\",\n      \"task\": \"string\",\n      \"created_at\": \"2007-01-15T21:05:41.677Z\",\n      \"updated_at\": \"1953-06-02T18:48:59.079Z\",\n      \"acknowledged_at\": \"1950-01-03T08:40:14.973Z\",\n      \"completed_at\": \"2024-06-08T22:03:46.670Z\",\n      \"completed_by_order_id\": \"string\",\n      \"upcoming_first_reminder_at\": \"1980-12-21T08:24:19.943Z\",\n      \"upcoming_second_reminder_at\": \"1967-03-01T15:11:58.791Z\",\n      \"upcoming_third_reminder_at\": \"1967-05-13T08:53:46.679Z\",\n      \"upcoming_fourth_reminder_at\": \"2002-02-16T23:18:33.122Z\",\n      \"due_today_reminder_at\": \"1992-02-09T00:30:15.002Z\",\n      \"past_due_first_reminder_at\": \"1947-03-06T16:18:37.185Z\",\n      \"past_due_second_reminder_at\": \"1995-08-10T19:36:52.695Z\",\n      \"past_due_third_reminder_at\": \"1964-01-28T15:16:07.886Z\",\n      \"escalate_reminder_at\": \"2000-05-25T22:48:05.390Z\",\n      \"last_reminded_at\": \"2025-02-03T09:05:41.352Z\"\n    },\n    {\n      \"due_by\": \"2026-03-10\",\n      \"id\": \"string\",\n      \"responsible_user_email\": \"string\",\n      \"entity_id\": \"string\",\n      \"status\": \"CANCELED\",\n      \"task\": \"string\",\n      \"created_at\": \"2010-02-28T00:38:44.984Z\",\n      \"updated_at\": \"2022-06-12T12:53:27.727Z\",\n      \"acknowledged_at\": \"2000-08-10T23:10:29.332Z\",\n      \"completed_at\": \"1951-05-20T16:36:47.849Z\",\n      \"completed_by_order_id\": \"string\",\n      \"upcoming_first_reminder_at\": \"1954-11-18T06:05:55.429Z\",\n      \"upcoming_second_reminder_at\": \"1950-12-13T18:15:02.339Z\",\n      \"upcoming_third_reminder_at\": \"2013-05-14T23:10:46.294Z\",\n      \"upcoming_fourth_reminder_at\": \"1966-09-28T05:08:51.967Z\",\n      \"due_today_reminder_at\": \"2015-06-05T14:42:45.924Z\",\n      \"past_due_first_reminder_at\": \"2003-11-18T22:30:04.416Z\",\n      \"past_due_second_reminder_at\": \"2008-12-16T13:11:15.646Z\",\n      \"past_due_third_reminder_at\": \"1992-09-01T00:39:09.521Z\",\n      \"escalate_reminder_at\": \"1966-06-19T02:19:36.558Z\",\n      \"last_reminded_at\": \"1990-07-25T21:57:11.269Z\"\n    }\n  ],\n  \"next\": \"https://gsEbUNmMSExOAbQgepnstdhfqrYm.amtRJP6vYT.BoBsceMVcEIxCc\",\n  \"previous\": \"https://SamfFRTFVzUuFxhgNw.qitgbs.qF.uoYV+hD-YPiXJreycTs2Xvi3K-yYowrqQWq\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.demo.singlefile.ai/external-api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "read write"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.demo.singlefile.ai/o/token/"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b5ca5904-b72d-4518-9948-745705985d40",
+    "name": "SingleFile External API Documentation documents organizations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Formation and compliance documents\n\nContact Support:\n Email: support@singlefile.io",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,791 @@
+{
+  "item": [
+    {
+      "id": "36c20f1e-3d41-4cc4-bbe0-c273466d82b4",
+      "name": "orders",
+      "description": {
+        "content": "Filing orders — create, place, update, and document-request driven order creation",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f0e87047-a844-4674-b1c4-2eb88a3f62a6",
+          "name": "create order",
+          "request": {
+            "name": "create order",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filing_type\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"entity_id\": \"<uuid>\",\n  \"entity_name\": \"<string>\",\n  \"organization\": \"<object>\",\n  \"jurisdiction\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"mailing_address\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"primary_address\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"primary_contact\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"local_address\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"effective_filing_date\": \"<string>\",\n  \"specific_business_purpose\": \"<string>\",\n  \"add_certified_copy\": false,\n  \"nature_of_business\": \"<string>\",\n  \"date_of_first_business\": \"<string>\",\n  \"variant\": \"<string>\",\n  \"officers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"expiration_date\": \"<string>\",\n  \"county\": \"<string>\",\n  \"share_classes\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"minority_owned\": \"<boolean>\",\n  \"minority_owner_race\": \"<string>\",\n  \"female_owned\": \"<boolean>\",\n  \"document\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"previously_authorized\": \"<boolean>\",\n  \"document_id\": \"<uuid>\",\n  \"registered_agent\": {\n    \"key_0\": \"<string>\"\n  },\n  \"authorized_person_name\": \"<string>\",\n  \"authorized_partner\": {\n    \"key_0\": \"<string>\"\n  },\n  \"general_partners\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"additional_data\": {\n    \"key_0\": \"<string>\"\n  },\n  \"use_singlefile_as_registered_agent\": false,\n  \"is_draft\": false,\n  \"client_matter_number\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4325d798-70d9-471f-a9ed-d445c2b376d7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filing_type\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"entity_id\": \"<uuid>\",\n  \"entity_name\": \"<string>\",\n  \"organization\": \"<object>\",\n  \"jurisdiction\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"mailing_address\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"primary_address\": {\n    \"key_0\": \"<string>\"\n  },\n  \"primary_contact\": {\n    \"key_0\": \"<string>\"\n  },\n  \"local_address\": {\n    \"key_0\": \"<string>\"\n  },\n  \"effective_filing_date\": \"<string>\",\n  \"specific_business_purpose\": \"<string>\",\n  \"add_certified_copy\": false,\n  \"nature_of_business\": \"<string>\",\n  \"date_of_first_business\": \"<string>\",\n  \"variant\": \"<string>\",\n  \"officers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"expiration_date\": \"<string>\",\n  \"county\": \"<string>\",\n  \"share_classes\": {\n    \"key_0\": \"<string>\"\n  },\n  \"minority_owned\": \"<boolean>\",\n  \"minority_owner_race\": \"<string>\",\n  \"female_owned\": \"<boolean>\",\n  \"document\": {\n    \"key_0\": \"<string>\"\n  },\n  \"previously_authorized\": \"<boolean>\",\n  \"document_id\": \"<uuid>\",\n  \"registered_agent\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"authorized_person_name\": \"<string>\",\n  \"authorized_partner\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"general_partners\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"additional_data\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"use_singlefile_as_registered_agent\": false,\n  \"is_draft\": false,\n  \"client_matter_number\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"filing_type\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"entity_id\": \"<uuid>\",\n  \"entity_name\": \"<string>\",\n  \"organization\": \"<object>\",\n  \"jurisdiction\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"mailing_address\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"primary_address\": {\n    \"key_0\": \"<string>\"\n  },\n  \"primary_contact\": {\n    \"key_0\": \"<string>\"\n  },\n  \"local_address\": {\n    \"key_0\": \"<string>\"\n  },\n  \"effective_filing_date\": \"<string>\",\n  \"specific_business_purpose\": \"<string>\",\n  \"add_certified_copy\": false,\n  \"nature_of_business\": \"<string>\",\n  \"date_of_first_business\": \"<string>\",\n  \"variant\": \"<string>\",\n  \"officers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"expiration_date\": \"<string>\",\n  \"county\": \"<string>\",\n  \"share_classes\": {\n    \"key_0\": \"<string>\"\n  },\n  \"minority_owned\": \"<boolean>\",\n  \"minority_owner_race\": \"<string>\",\n  \"female_owned\": \"<boolean>\",\n  \"document\": {\n    \"key_0\": \"<string>\"\n  },\n  \"previously_authorized\": \"<boolean>\",\n  \"document_id\": \"<uuid>\",\n  \"registered_agent\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"authorized_person_name\": \"<string>\",\n  \"authorized_partner\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"general_partners\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"additional_data\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"use_singlefile_as_registered_agent\": false,\n  \"is_draft\": false,\n  \"client_matter_number\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b10a1331-d02a-426f-8474-0bc8c1ed04b8",
+          "name": "create order from document request",
+          "request": {
+            "name": "create order from document request",
+            "description": {
+              "content": "Create an order from the order document request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                "document-requests",
+                ":request_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "request_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d8f5197-15a6-4324-bd39-96280a452dae",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    "document-requests",
+                    ":request_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "request_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1b23407b-8f07-480b-bc6d-dfa3492ccef4",
+          "name": "get order document request",
+          "request": {
+            "name": "get order document request",
+            "description": {
+              "content": "Get the order document request for user review.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                "document-requests",
+                ":request_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "request_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "308fc1ec-d57e-4d36-a56f-0cdbe90e00f9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    "document-requests",
+                    ":request_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "request_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5c650b5-6e95-4501-bf40-262acd631ff1",
+          "name": "update order document request",
+          "request": {
+            "name": "update order document request",
+            "description": {
+              "content": "Update the order document request with user-provided data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                "document-requests",
+                ":request_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "request_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ed27fd87-94a7-4e9c-ae7f-7d2903583e9b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    "document-requests",
+                    ":request_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "request_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9eb2b546-5eb6-49a6-a9d6-3328a328265f",
+          "name": "get order",
+          "request": {
+            "name": "get order",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":order_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "order_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b943600-1b02-4884-a1df-9ee976081c90",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":order_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"order_id\": \"string\",\n  \"entity_id\": \"string\",\n  \"entity_name\": \"string\",\n  \"entity_type\": \"Attorney\",\n  \"organization\": \"string\",\n  \"status\": \"string\",\n  \"jurisdiction\": \"string\",\n  \"filing_type\": \"string\",\n  \"completed_at\": \"1949-03-06T19:32:37.436Z\",\n  \"created_at\": \"2011-05-24T14:32:47.043Z\",\n  \"updated_at\": \"1977-03-24T07:12:25.713Z\",\n  \"created_by\": \"string\",\n  \"document_id\": \"string\",\n  \"variant\": \"string\",\n  \"comments\": \"string\",\n  \"share_classes\": \"string\",\n  \"mailing_address\": \"string\",\n  \"primary_address\": \"string\",\n  \"local_address\": \"string\",\n  \"primary_contact\": \"string\",\n  \"billing_contact\": \"string\",\n  \"officers\": \"string\",\n  \"registered_agent\": \"string\",\n  \"authorized_person_name\": \"string\",\n  \"authorized_partner\": \"string\",\n  \"general_partners\": \"string\",\n  \"additional_data\": \"string\",\n  \"client_matter_number\": \"string\",\n  \"order_items\": \"string\",\n  \"total_amount\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e8dc70e-e1ad-4b8f-b6fa-5fdc1bf017c8",
+          "name": "orders partial update",
+          "request": {
+            "name": "orders partial update",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":order_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "order_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "214969fd-7211-4efa-9006-f06ca304e306",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":order_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"order_id\": \"string\",\n  \"entity_id\": \"string\",\n  \"entity_name\": \"string\",\n  \"entity_type\": \"Attorney\",\n  \"organization\": \"string\",\n  \"status\": \"string\",\n  \"jurisdiction\": \"string\",\n  \"filing_type\": \"string\",\n  \"completed_at\": \"1949-03-06T19:32:37.436Z\",\n  \"created_at\": \"2011-05-24T14:32:47.043Z\",\n  \"updated_at\": \"1977-03-24T07:12:25.713Z\",\n  \"created_by\": \"string\",\n  \"document_id\": \"string\",\n  \"variant\": \"string\",\n  \"comments\": \"string\",\n  \"share_classes\": \"string\",\n  \"mailing_address\": \"string\",\n  \"primary_address\": \"string\",\n  \"local_address\": \"string\",\n  \"primary_contact\": \"string\",\n  \"billing_contact\": \"string\",\n  \"officers\": \"string\",\n  \"registered_agent\": \"string\",\n  \"authorized_person_name\": \"string\",\n  \"authorized_partner\": \"string\",\n  \"general_partners\": \"string\",\n  \"additional_data\": \"string\",\n  \"client_matter_number\": \"string\",\n  \"order_items\": \"string\",\n  \"total_amount\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca7b80e4-842f-4fa6-8633-c9a90a92e6ef",
+          "name": "place order",
+          "request": {
+            "name": "place order",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":order_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "order_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "733c81b1-f26e-42da-ab62-e0c1f47dd536",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":order_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"order_id\": \"string\",\n  \"entity_id\": \"string\",\n  \"entity_name\": \"string\",\n  \"entity_type\": \"Attorney\",\n  \"organization\": \"string\",\n  \"status\": \"string\",\n  \"jurisdiction\": \"string\",\n  \"filing_type\": \"string\",\n  \"completed_at\": \"1949-03-06T19:32:37.436Z\",\n  \"created_at\": \"2011-05-24T14:32:47.043Z\",\n  \"updated_at\": \"1977-03-24T07:12:25.713Z\",\n  \"created_by\": \"string\",\n  \"document_id\": \"string\",\n  \"variant\": \"string\",\n  \"comments\": \"string\",\n  \"share_classes\": \"string\",\n  \"mailing_address\": \"string\",\n  \"primary_address\": \"string\",\n  \"local_address\": \"string\",\n  \"primary_contact\": \"string\",\n  \"billing_contact\": \"string\",\n  \"officers\": \"string\",\n  \"registered_agent\": \"string\",\n  \"authorized_person_name\": \"string\",\n  \"authorized_partner\": \"string\",\n  \"general_partners\": \"string\",\n  \"additional_data\": \"string\",\n  \"client_matter_number\": \"string\",\n  \"order_items\": \"string\",\n  \"total_amount\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c441992-be5d-4807-a3ee-36e83313f7da",
+          "name": "update order",
+          "request": {
+            "name": "update order",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":order_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "order_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "4d3012fa-bb58-4ffe-8c59-9be87fc09a28",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":order_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"order_id\": \"string\",\n  \"entity_id\": \"string\",\n  \"entity_name\": \"string\",\n  \"entity_type\": \"Attorney\",\n  \"organization\": \"string\",\n  \"status\": \"string\",\n  \"jurisdiction\": \"string\",\n  \"filing_type\": \"string\",\n  \"completed_at\": \"1949-03-06T19:32:37.436Z\",\n  \"created_at\": \"2011-05-24T14:32:47.043Z\",\n  \"updated_at\": \"1977-03-24T07:12:25.713Z\",\n  \"created_by\": \"string\",\n  \"document_id\": \"string\",\n  \"variant\": \"string\",\n  \"comments\": \"string\",\n  \"share_classes\": \"string\",\n  \"mailing_address\": \"string\",\n  \"primary_address\": \"string\",\n  \"local_address\": \"string\",\n  \"primary_contact\": \"string\",\n  \"billing_contact\": \"string\",\n  \"officers\": \"string\",\n  \"registered_agent\": \"string\",\n  \"authorized_person_name\": \"string\",\n  \"authorized_partner\": \"string\",\n  \"general_partners\": \"string\",\n  \"additional_data\": \"string\",\n  \"client_matter_number\": \"string\",\n  \"order_items\": \"string\",\n  \"total_amount\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.demo.singlefile.ai/external-api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "read write"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.demo.singlefile.ai/o/token/"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "adc8ac9d-3828-4590-a8d3-ad84a0a93de5",
+    "name": "SingleFile External API Documentation documents orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Formation and compliance documents\n\nContact Support:\n Email: support@singlefile.io",
+      "type": "text/plain"
+    }
+  }
+}

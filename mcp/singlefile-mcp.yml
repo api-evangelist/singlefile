@@ -2,7 +2,8 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: openapi/singlefile-openapi.yml
-note: No official hosted MCP server found. Candidate tool list derived one-per-operation from the reconstructed OpenAPI.
+note: No official hosted MCP server found. Candidate tool list derived one-per-operation from the reconstructed
+  OpenAPI.
 server:
   name: singlefile
   transport: stdio
@@ -157,3 +158,9 @@ tools:
 - name: tasks_read
   description: GET /tasks/{task_id}
   source_operation: openapi/singlefile-openapi.yml#tasks_read
+deployment:
+  mode: none
+  verified: derived
+  tools: 50
+  checked: '2026-08-12'
+  source: catalog MCP census

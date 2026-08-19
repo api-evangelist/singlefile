@@ -1,0 +1,185 @@
+{
+  "item": [
+    {
+      "id": "7d9357d8-4f8f-4f06-bfc2-ff3c54bbd04e",
+      "name": "schemas",
+      "description": {
+        "content": "JSON schemas for order payloads by entity_type, filing_type and jurisdiction",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a1df3b3-8508-4356-94ab-1e361b8eea50",
+          "name": "schemas list list",
+          "request": {
+            "name": "schemas list list",
+            "description": {
+              "content": "Handle GET request for schema list.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "schemas",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "02851aad-444a-49bb-93fc-a8390d1fb632",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "schemas",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "732089d4-7778-4e90-b625-6b706dc11277",
+          "name": "schemas read",
+          "request": {
+            "name": "schemas read",
+            "description": {
+              "content": "Retrieve JSON schema for order payloads based on entity_type, filing_type, and jurisdiction.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "schemas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3478e55-dd29-4686-822f-fc19495c43f5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "schemas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.demo.singlefile.ai/external-api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "read write"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.demo.singlefile.ai/o/token/"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "69f31d78-f2da-4748-9d23-46c6f569c917",
+    "name": "SingleFile External API Documentation documents schemas API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Formation and compliance documents\n\nContact Support:\n Email: support@singlefile.io",
+      "type": "text/plain"
+    }
+  }
+}

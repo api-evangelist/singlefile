@@ -1,0 +1,265 @@
+{
+  "item": [
+    {
+      "id": "880cc143-0468-4a1d-a49e-bce9963e42ad",
+      "name": "tasks",
+      "description": {
+        "content": "Compliance tasks and deadlines",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cb85e271-4f30-44c9-9e4d-f9bffad3b5d1",
+          "name": "tasks list list",
+          "request": {
+            "name": "tasks list list",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tasks",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search term."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c9ee1fd-5a40-4b5b-817e-6e4304bfcd3e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tasks",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 5182,\n  \"results\": [\n    {\n      \"due_by\": \"2012-03-26\",\n      \"id\": \"string\",\n      \"responsible_user_email\": \"string\",\n      \"entity_id\": \"string\",\n      \"status\": \"CANCELED\",\n      \"task\": \"string\",\n      \"created_at\": \"1973-09-29T03:00:55.674Z\",\n      \"updated_at\": \"2007-06-19T10:44:26.327Z\",\n      \"acknowledged_at\": \"1959-11-19T14:26:28.322Z\",\n      \"completed_at\": \"1999-06-14T21:50:44.477Z\",\n      \"completed_by_order_id\": \"string\",\n      \"upcoming_first_reminder_at\": \"2026-01-19T20:07:02.496Z\",\n      \"upcoming_second_reminder_at\": \"1997-12-03T18:00:57.069Z\",\n      \"upcoming_third_reminder_at\": \"1982-01-30T13:54:36.207Z\",\n      \"upcoming_fourth_reminder_at\": \"1986-04-03T21:24:27.984Z\",\n      \"due_today_reminder_at\": \"1994-04-19T02:18:08.146Z\",\n      \"past_due_first_reminder_at\": \"1961-11-28T16:09:08.389Z\",\n      \"past_due_second_reminder_at\": \"2011-08-18T14:28:03.266Z\",\n      \"past_due_third_reminder_at\": \"1958-09-07T06:18:47.500Z\",\n      \"escalate_reminder_at\": \"2015-05-03T07:51:27.094Z\",\n      \"last_reminded_at\": \"2026-05-06T19:26:06.810Z\"\n    },\n    {\n      \"due_by\": \"1972-12-08\",\n      \"id\": \"string\",\n      \"responsible_user_email\": \"string\",\n      \"entity_id\": \"string\",\n      \"status\": \"WAITING_FOR_CLIENT_RESPONSE\",\n      \"task\": \"string\",\n      \"created_at\": \"2022-03-29T05:23:42.292Z\",\n      \"updated_at\": \"1969-08-08T00:23:31.513Z\",\n      \"acknowledged_at\": \"1958-10-05T03:13:11.509Z\",\n      \"completed_at\": \"1973-06-21T18:08:54.931Z\",\n      \"completed_by_order_id\": \"string\",\n      \"upcoming_first_reminder_at\": \"1956-08-26T22:25:54.649Z\",\n      \"upcoming_second_reminder_at\": \"2011-09-24T11:11:36.884Z\",\n      \"upcoming_third_reminder_at\": \"2011-01-03T19:02:43.709Z\",\n      \"upcoming_fourth_reminder_at\": \"2015-12-09T16:56:56.105Z\",\n      \"due_today_reminder_at\": \"1987-02-12T22:34:34.020Z\",\n      \"past_due_first_reminder_at\": \"1983-12-23T21:49:05.739Z\",\n      \"past_due_second_reminder_at\": \"1984-02-25T23:49:57.496Z\",\n      \"past_due_third_reminder_at\": \"2003-01-20T11:44:57.902Z\",\n      \"escalate_reminder_at\": \"1994-04-21T22:04:40.880Z\",\n      \"last_reminded_at\": \"1962-02-15T15:56:43.267Z\"\n    }\n  ],\n  \"next\": \"https://stnybMaYZmEtOHbPObgDXPeylCmGNZ.dtUJujwANYYVSkQYEHTR,YXKBiR,uFNXgOLajnl\",\n  \"previous\": \"https://lMsJdNlHRcAVra.ynsDsEN-x7eNJxZejEc4zUrdxoW5f1lV6eQCZiHnDy1OkMpoOCw2+fS-YYbwV3Xp,7k\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "67534b82-e17f-4e02-ac83-e08c291963da",
+          "name": "tasks read",
+          "request": {
+            "name": "tasks read",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tasks",
+                ":task_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "task_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec952618-792e-46e2-b259-ea17b72552a7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tasks",
+                    ":task_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "task_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"due_by\": \"1967-08-23\",\n  \"id\": \"string\",\n  \"responsible_user_email\": \"string\",\n  \"entity_id\": \"string\",\n  \"status\": \"ACKNOWLEDGED\",\n  \"task\": \"string\",\n  \"created_at\": \"1985-02-19T01:07:48.003Z\",\n  \"updated_at\": \"1997-10-10T12:48:00.321Z\",\n  \"acknowledged_at\": \"1997-03-22T10:39:25.926Z\",\n  \"completed_at\": \"1979-04-27T02:28:24.609Z\",\n  \"completed_by_order_id\": \"string\",\n  \"upcoming_first_reminder_at\": \"1951-04-15T18:10:35.128Z\",\n  \"upcoming_second_reminder_at\": \"1978-02-25T07:42:36.601Z\",\n  \"upcoming_third_reminder_at\": \"2009-03-05T08:07:26.576Z\",\n  \"upcoming_fourth_reminder_at\": \"1964-06-17T00:12:23.657Z\",\n  \"due_today_reminder_at\": \"2020-09-23T18:36:55.807Z\",\n  \"past_due_first_reminder_at\": \"1966-08-04T22:43:44.436Z\",\n  \"past_due_second_reminder_at\": \"1968-06-25T00:51:21.464Z\",\n  \"past_due_third_reminder_at\": \"2002-04-06T11:00:50.653Z\",\n  \"escalate_reminder_at\": \"1989-06-02T11:14:22.051Z\",\n  \"last_reminded_at\": \"1955-12-08T02:23:23.292Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.demo.singlefile.ai/external-api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "read write"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.demo.singlefile.ai/o/token/"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "853c44ae-ff5b-454f-b66c-0a4cc748ba2c",
+    "name": "SingleFile External API Documentation documents tasks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Formation and compliance documents\n\nContact Support:\n Email: support@singlefile.io",
+      "type": "text/plain"
+    }
+  }
+}

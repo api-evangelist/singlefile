@@ -1,0 +1,144 @@
+{
+  "item": [
+    {
+      "id": "a830b40b-a2b2-4d3b-a027-9a0c99648b54",
+      "name": "documents",
+      "description": {
+        "content": "Formation and compliance documents",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7ddd5f8f-8d1c-4ca8-9322-5b0ea9c243de",
+          "name": "documents read",
+          "request": {
+            "name": "documents read",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "documents",
+                ":document_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "document_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d48c9173-15ce-4d8f-a99c-e8946b3bb433",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "documents",
+                    ":document_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "document_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"document_type\": \"string\",\n  \"filing_type\": \"string\",\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"entity_name\": \"string\",\n  \"organization_id\": \"string\",\n  \"entity_id\": \"string\",\n  \"jurisdiction\": \"string\",\n  \"certified\": false,\n  \"created_at\": \"1999-10-28T10:33:23.133Z\",\n  \"description\": \"string\",\n  \"document_url\": \"https://cCxi.qmarG2+mGfQMhhwwqmzWHhgpWoooI9lcB\",\n  \"page_length\": 374587378,\n  \"updated_at\": \"1991-02-12T01:46:44.513Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.demo.singlefile.ai/external-api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "read write"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.demo.singlefile.ai/o/token/"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6daa66df-bf04-4d62-855b-42446b51d1bc",
+    "name": "SingleFile External API Documentation documents API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Formation and compliance documents\n\nContact Support:\n Email: support@singlefile.io",
+      "type": "text/plain"
+    }
+  }
+}

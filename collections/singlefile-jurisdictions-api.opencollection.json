@@ -1,0 +1,152 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SingleFile External API Documentation documents jurisdictions API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.demo.singlefile.ai/o/token/",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "jurisdictions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "jurisdictions_dbas_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/jurisdictions/:jurisdiction_id/dbas",
+            "params": [
+              {
+                "name": "jurisdiction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List, create, delete, or update DBAs for a jurisdiction (collection)."
+        },
+        {
+          "info": {
+            "name": "jurisdictions_dbas_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/jurisdictions/:jurisdiction_id/dbas",
+            "params": [
+              {
+                "name": "jurisdiction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List, create, delete, or update DBAs for a jurisdiction (collection)."
+        },
+        {
+          "info": {
+            "name": "jurisdictions_dbas_partial_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/jurisdictions/:jurisdiction_id/dbas",
+            "params": [
+              {
+                "name": "jurisdiction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List, create, delete, or update DBAs for a jurisdiction (collection)."
+        },
+        {
+          "info": {
+            "name": "jurisdictions_dbas_delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/jurisdictions/:jurisdiction_id/dbas",
+            "params": [
+              {
+                "name": "jurisdiction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List, create, delete, or update DBAs for a jurisdiction (collection)."
+        },
+        {
+          "info": {
+            "name": "jurisdictions_read",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/jurisdictions/:jurisdiction_id",
+            "params": [
+              {
+                "name": "jurisdiction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "jurisdictions_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/jurisdictions/:jurisdiction_id",
+            "params": [
+              {
+                "name": "jurisdiction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "jurisdictions_partial_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.demo.singlefile.ai/external-api/v1/jurisdictions/:jurisdiction_id",
+            "params": [
+              {
+                "name": "jurisdiction_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

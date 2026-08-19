@@ -1,0 +1,684 @@
+{
+  "item": [
+    {
+      "id": "493772da-9793-4ef1-860c-5add00288d5e",
+      "name": "jurisdictions",
+      "description": {
+        "content": "Entity jurisdictions and DBAs across US states",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3c69e4d1-a197-49ef-b2da-599a55b26958",
+          "name": "jurisdictions dbas create",
+          "request": {
+            "name": "jurisdictions dbas create",
+            "description": {
+              "content": "List, create, delete, or update DBAs for a jurisdiction (collection).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jurisdictions",
+                ":jurisdiction_id",
+                "dbas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jurisdiction_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "edb3fe3e-bb4e-4bf6-9f55-b48f0cd1ef9f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jurisdictions",
+                    ":jurisdiction_id",
+                    "dbas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jurisdiction_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "73ed4661-2c0a-496e-b11a-091b5e146570",
+          "name": "jurisdictions dbas delete",
+          "request": {
+            "name": "jurisdictions dbas delete",
+            "description": {
+              "content": "List, create, delete, or update DBAs for a jurisdiction (collection).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jurisdictions",
+                ":jurisdiction_id",
+                "dbas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jurisdiction_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ba6b36e-cfd7-4c75-93bb-f37e98b553bd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jurisdictions",
+                    ":jurisdiction_id",
+                    "dbas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jurisdiction_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b42aa7a-676b-4180-bbd8-73b67d6e5684",
+          "name": "jurisdictions dbas list",
+          "request": {
+            "name": "jurisdictions dbas list",
+            "description": {
+              "content": "List, create, delete, or update DBAs for a jurisdiction (collection).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jurisdictions",
+                ":jurisdiction_id",
+                "dbas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jurisdiction_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "31209c71-a47a-40b6-8e01-02961b763168",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jurisdictions",
+                    ":jurisdiction_id",
+                    "dbas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jurisdiction_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4322a05-9391-44ce-bc91-3e9e15b2da7d",
+          "name": "jurisdictions dbas partial update",
+          "request": {
+            "name": "jurisdictions dbas partial update",
+            "description": {
+              "content": "List, create, delete, or update DBAs for a jurisdiction (collection).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jurisdictions",
+                ":jurisdiction_id",
+                "dbas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jurisdiction_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PATCH",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6d215627-0abd-4ce1-bd56-8f54f0db82db",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jurisdictions",
+                    ":jurisdiction_id",
+                    "dbas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jurisdiction_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "087d6338-3f3e-451e-9f96-3cb170f15cc0",
+          "name": "jurisdictions partial update",
+          "request": {
+            "name": "jurisdictions partial update",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jurisdictions",
+                ":jurisdiction_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jurisdiction_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "4ce65502-b615-47c2-adf3-f083bc830f1b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jurisdictions",
+                    ":jurisdiction_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jurisdiction_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"state_file_number\": \"string\",\n  \"local_address\": {\n    \"id\": \"string\",\n    \"street_address\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"country_code\": \"string\",\n    \"country_area\": \"string\",\n    \"city_area\": \"string\",\n    \"sorting_code\": \"string\"\n  },\n  \"registration_date\": \"2021-02-23\",\n  \"expiration_date\": \"1990-11-20\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8051311b-8f26-4981-9daf-a2d3bfe1bd7d",
+          "name": "jurisdictions read",
+          "request": {
+            "name": "jurisdictions read",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jurisdictions",
+                ":jurisdiction_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jurisdiction_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7669f39-1ece-4f5f-9f1a-e3bb2707a382",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jurisdictions",
+                    ":jurisdiction_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jurisdiction_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"registration_type\": \"string\",\n  \"state_file_number\": \"string\",\n  \"status\": \"string\",\n  \"has_annual_report_subscription\": false,\n  \"is_registered_agent\": true,\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"organization_id\": \"string\",\n  \"entity_id\": \"string\",\n  \"registration_date\": \"1949-06-06\",\n  \"expiration_date\": \"1949-06-23\",\n  \"dbas\": \"string\",\n  \"local_address\": {\n    \"id\": \"string\",\n    \"street_address\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"country_code\": \"string\",\n    \"country_area\": \"string\",\n    \"city_area\": \"string\",\n    \"sorting_code\": \"string\"\n  },\n  \"created_at\": \"2003-09-21T00:36:58.955Z\",\n  \"updated_at\": \"1992-10-02T14:51:13.303Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b62b1127-efcd-4d9f-918c-2e2c4bf3f871",
+          "name": "jurisdictions update",
+          "request": {
+            "name": "jurisdictions update",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jurisdictions",
+                ":jurisdiction_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jurisdiction_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "c68a966c-741d-4095-9047-31ecb9a713ca",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jurisdictions",
+                    ":jurisdiction_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jurisdiction_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"state_file_number\": \"string\",\n  \"local_address\": {\n    \"id\": \"string\",\n    \"street_address\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"postal_code\": \"string\",\n    \"country\": \"string\",\n    \"country_code\": \"string\",\n    \"country_area\": \"string\",\n    \"city_area\": \"string\",\n    \"sorting_code\": \"string\"\n  },\n  \"registration_date\": \"2021-02-23\",\n  \"expiration_date\": \"1990-11-20\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.demo.singlefile.ai/external-api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "read write"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.demo.singlefile.ai/o/token/"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "12097e57-b8cc-4542-a378-073e0b0ddffe",
+    "name": "SingleFile External API Documentation documents jurisdictions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Formation and compliance documents\n\nContact Support:\n Email: support@singlefile.io",
+      "type": "text/plain"
+    }
+  }
+}
