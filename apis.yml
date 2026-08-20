@@ -37,6 +37,17 @@ tags:
 - Registered Agent
 - Business Filings
 - Regulatory
+- Webhook
+- Authentication
+tags_raw:
+- Company
+- Compliance
+- Legal
+- Entity Management
+- Corporate Compliance
+- Registered Agent
+- Business Filings
+- Regulatory
 - API
 - Webhooks
 - OAuth
@@ -47,6 +58,8 @@ apis:
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
   tags:
+  - Documents
+  tags_raw:
   - documents
   properties:
   - type: OpenAPI
@@ -65,6 +78,8 @@ apis:
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
   tags:
+  - Entities
+  tags_raw:
   - entities
   properties:
   - type: OpenAPI
@@ -81,6 +96,8 @@ apis:
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
   tags:
+  - Jurisdictions
+  tags_raw:
   - jurisdictions
   properties:
   - type: OpenAPI
@@ -97,6 +114,8 @@ apis:
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
   tags:
+  - Order
+  tags_raw:
   - orders
   properties:
   - type: OpenAPI
@@ -114,6 +133,8 @@ apis:
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
   tags:
+  - Organization
+  tags_raw:
   - organizations
   properties:
   - type: OpenAPI
@@ -130,6 +151,8 @@ apis:
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
   tags:
+  - Schemas
+  tags_raw:
   - schemas
   properties:
   - type: OpenAPI
@@ -146,6 +169,8 @@ apis:
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
   tags:
+  - Task
+  tags_raw:
   - tasks
   properties:
   - type: OpenAPI
