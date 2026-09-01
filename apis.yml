@@ -108,7 +108,7 @@ apis:
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
   tags:
-  - jurisdictions
+  - Jurisdictions
   tags_raw:
   - jurisdictions
   properties:
