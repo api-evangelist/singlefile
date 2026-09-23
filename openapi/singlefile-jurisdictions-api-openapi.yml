@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: SingleFile External API Documentation documents jurisdictions API
-  description: Formation and compliance documents
+  title: SingleFile External API Documentation Jurisdictions API
+  description: Entity jurisdictions and DBAs across US states
   termsOfService: https://www.singlefile.io/
   contact:
     email: support@singlefile.io
@@ -19,7 +19,7 @@ security:
   - read
   - write
 tags:
-- name: jurisdictions
+- name: Jurisdictions
   description: Entity jurisdictions and DBAs across US states
 paths:
   /jurisdictions/{jurisdiction_id}/dbas:
@@ -36,7 +36,9 @@ paths:
         '201':
           description: ''
       tags:
-      - jurisdictions
+      - Jurisdictions
+      summary: Jurisdictions dbas create
+      x-summary-source: derived
     delete:
       operationId: jurisdictions_dbas_delete
       description: List, create, delete, or update DBAs for a jurisdiction (collection).
@@ -44,7 +46,9 @@ paths:
         '204':
           description: ''
       tags:
-      - jurisdictions
+      - Jurisdictions
+      summary: Jurisdictions dbas delete
+      x-summary-source: derived
     get:
       operationId: jurisdictions_dbas_list
       description: List, create, delete, or update DBAs for a jurisdiction (collection).
@@ -52,7 +56,9 @@ paths:
         '200':
           description: ''
       tags:
-      - jurisdictions
+      - Jurisdictions
+      summary: Jurisdictions dbas list
+      x-summary-source: derived
     patch:
       operationId: jurisdictions_dbas_partial_update
       description: List, create, delete, or update DBAs for a jurisdiction (collection).
@@ -60,7 +66,9 @@ paths:
         '200':
           description: ''
       tags:
-      - jurisdictions
+      - Jurisdictions
+      summary: Jurisdictions dbas partial update
+      x-summary-source: derived
   /jurisdictions/{jurisdiction_id}:
     parameters:
     - name: jurisdiction_id
@@ -81,7 +89,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/JurisdictionUpdate'
       tags:
-      - jurisdictions
+      - Jurisdictions
+      summary: Jurisdictions partial update
+      x-summary-source: derived
     get:
       operationId: jurisdictions_read
       description: ''
@@ -93,7 +103,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/JurisdictionDetail'
       tags:
-      - jurisdictions
+      - Jurisdictions
+      summary: Jurisdictions read
+      x-summary-source: derived
     put:
       operationId: jurisdictions_update
       description: ''
@@ -107,9 +119,34 @@ paths:
               schema:
                 $ref: '#/components/schemas/JurisdictionUpdate'
       tags:
-      - jurisdictions
+      - Jurisdictions
+      summary: Jurisdictions update
+      x-summary-source: derived
 components:
   schemas:
+    JurisdictionUpdate:
+      type: object
+      properties:
+        state_file_number:
+          title: State file number
+          type:
+          - string
+          - 'null'
+          maxLength: 30
+        local_address:
+          $ref: '#/components/schemas/ExternalAddress'
+        registration_date:
+          title: Registration date
+          type:
+          - string
+          - 'null'
+          format: date
+        expiration_date:
+          title: Expiration date
+          type:
+          - string
+          - 'null'
+          format: date
     JurisdictionDetail:
       required:
       - registration_type
@@ -121,14 +158,16 @@ components:
       properties:
         id:
           title: Id
-          type: string
+          type:
+          - string
+          - 'null'
           readOnly: true
-          nullable: true
         name:
           title: Jurisdiction
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 100
-          nullable: true
         organization_id:
           title: Organization id
           type: string
@@ -147,14 +186,16 @@ components:
           minLength: 1
         registration_date:
           title: Registration date
-          type: string
+          type:
+          - string
+          - 'null'
           format: date
-          nullable: true
         expiration_date:
           title: Expiration date
-          type: string
+          type:
+          - string
+          - 'null'
           format: date
-          nullable: true
         status:
           title: Status
           type: string
@@ -179,79 +220,69 @@ components:
           title: Updated at
           type: string
           format: date-time
-    JurisdictionUpdate:
-      type: object
-      properties:
-        state_file_number:
-          title: State file number
-          type: string
-          maxLength: 30
-          nullable: true
-        local_address:
-          $ref: '#/components/schemas/ExternalAddress'
-        registration_date:
-          title: Registration date
-          type: string
-          format: date
-          nullable: true
-        expiration_date:
-          title: Expiration date
-          type: string
-          format: date
-          nullable: true
     ExternalAddress:
       type: object
       properties:
         id:
           title: Id
-          type: string
+          type:
+          - string
+          - 'null'
           readOnly: true
-          nullable: true
         street_address:
           title: Street address
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 200
-          nullable: true
         city:
           title: City
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 100
-          nullable: true
         state:
           title: State
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 100
-          nullable: true
         postal_code:
           title: Postal code
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 20
-          nullable: true
         country:
           title: Country
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 100
-          nullable: true
         country_code:
           title: Country code
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 10
-          nullable: true
         country_area:
           title: Country area
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 100
-          nullable: true
         city_area:
           title: City area
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 100
-          nullable: true
         sorting_code:
           title: Sorting code
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 100
-          nullable: true
   securitySchemes:
     OAuth2ClientCredentials:
       type: oauth2

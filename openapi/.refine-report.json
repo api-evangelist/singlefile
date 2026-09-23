@@ -1,13 +1,7 @@
 {
   "provider": "singlefile",
   "sources": [
-    "singlefile-documents-api-openapi.yml",
-    "singlefile-entities-api-openapi.yml",
-    "singlefile-jurisdictions-api-openapi.yml",
-    "singlefile-orders-api-openapi.yml",
-    "singlefile-organizations-api-openapi.yml",
-    "singlefile-schemas-api-openapi.yml",
-    "singlefile-tasks-api-openapi.yml"
+    "_original/singlefile-openapi.yml"
   ],
   "outputs": [
     "singlefile-documents-api-openapi.yml",
@@ -20,16 +14,26 @@
   ],
   "archived": [],
   "errors": [
-    "singlefile-entities-api-openapi.yml: dangling $ref: #/components/requestBodies/ContactUpdate",
-    "singlefile-entities-api-openapi.yml: dangling $ref: #/components/requestBodies/DocumentUpload",
-    "singlefile-entities-api-openapi.yml: dangling $ref: #/components/requestBodies/EntityUpdate",
-    "singlefile-jurisdictions-api-openapi.yml: dangling $ref: #/components/requestBodies/JurisdictionUpdate",
-    "singlefile-orders-api-openapi.yml: dangling $ref: #/components/requestBodies/OrderDetail",
-    "singlefile-organizations-api-openapi.yml: dangling $ref: #/components/requestBodies/ContactUpdate",
-    "singlefile-organizations-api-openapi.yml: dangling $ref: #/components/requestBodies/DocumentUpload",
-    "singlefile-organizations-api-openapi.yml: dangling $ref: #/components/requestBodies/EntityCreate"
+    "singlefile-openapi.yml: dangling $ref: #/components/requestBodies/ContactUpdate",
+    "singlefile-openapi.yml: dangling $ref: #/components/requestBodies/DocumentUpload",
+    "singlefile-openapi.yml: dangling $ref: #/components/requestBodies/EntityCreate",
+    "singlefile-openapi.yml: dangling $ref: #/components/requestBodies/EntityUpdate",
+    "singlefile-openapi.yml: dangling $ref: #/components/requestBodies/JurisdictionUpdate",
+    "singlefile-openapi.yml: dangling $ref: #/components/requestBodies/OrderDetail"
   ],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "singlefile-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "singlefile-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "singlefile-entities-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "singlefile-jurisdictions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "singlefile-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "singlefile-organizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "singlefile-schemas-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "singlefile-tasks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

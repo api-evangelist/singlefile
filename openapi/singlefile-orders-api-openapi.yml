@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: SingleFile External API Documentation documents orders API
-  description: Formation and compliance documents
+  title: SingleFile External API Documentation Orders API
+  description: Filing orders — create, place, update, and document-request driven order creation
   termsOfService: https://www.singlefile.io/
   contact:
     email: support@singlefile.io
@@ -19,7 +19,7 @@ security:
   - read
   - write
 tags:
-- name: orders
+- name: Orders
   description: Filing orders — create, place, update, and document-request driven order creation
 paths:
   /orders:
@@ -41,7 +41,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/OrderCreate'
       tags:
-      - orders
+      - Orders
+      summary: Create order
+      x-summary-source: derived
   /orders/document-requests/{request_id}:
     parameters:
     - name: request_id
@@ -56,7 +58,9 @@ paths:
         '201':
           description: ''
       tags:
-      - orders
+      - Orders
+      summary: Create order from document request
+      x-summary-source: derived
     get:
       operationId: get_order_document_request
       description: Get the order document request for user review.
@@ -64,7 +68,9 @@ paths:
         '200':
           description: ''
       tags:
-      - orders
+      - Orders
+      summary: Get order document request
+      x-summary-source: derived
     put:
       operationId: update_order_document_request
       description: Update the order document request with user-provided data.
@@ -72,7 +78,9 @@ paths:
         '200':
           description: ''
       tags:
-      - orders
+      - Orders
+      summary: Update order document request
+      x-summary-source: derived
   /orders/{order_id}:
     parameters:
     - name: order_id
@@ -91,7 +99,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/OrderDetail'
       tags:
-      - orders
+      - Orders
+      summary: Get order
+      x-summary-source: derived
     patch:
       operationId: orders_partial_update
       description: ''
@@ -105,7 +115,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/OrderDetail'
       tags:
-      - orders
+      - Orders
+      summary: Orders partial update
+      x-summary-source: derived
     post:
       operationId: place_order
       description: ''
@@ -119,7 +131,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/OrderDetail'
       tags:
-      - orders
+      - Orders
+      summary: Place order
+      x-summary-source: derived
     put:
       operationId: update_order
       description: ''
@@ -133,7 +147,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/OrderDetail'
       tags:
-      - orders
+      - Orders
+      summary: Update order
+      x-summary-source: derived
 components:
   schemas:
     OrderDetail:
@@ -141,9 +157,10 @@ components:
       properties:
         id:
           title: Id
-          type: string
+          type:
+          - string
+          - 'null'
           readOnly: true
-          nullable: true
         order_id:
           title: Order id
           type: string
@@ -195,9 +212,10 @@ components:
           minLength: 1
         completed_at:
           title: Completed at
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         created_at:
           title: Created at
           type: string
@@ -221,9 +239,10 @@ components:
         comments:
           title: Comments
           description: Users can enter additional comments for this order here.
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 2000
-          nullable: true
         share_classes:
           title: Share classes
           type: string
@@ -321,26 +340,30 @@ components:
           title: Mailing address
           type: object
           additionalProperties:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
         primary_address:
           title: Primary address
           type: object
           additionalProperties:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
         primary_contact:
           title: Primary contact
           type: object
           additionalProperties:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
         local_address:
           title: Local address
           type: object
           additionalProperties:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
         effective_filing_date:
           title: Effective filing date
           type: string
@@ -368,8 +391,9 @@ components:
         officers:
           type: array
           items:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
         expiration_date:
           title: Expiration date
           type: string
@@ -382,8 +406,9 @@ components:
           title: Share classes
           type: object
           additionalProperties:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
         minority_owned:
           title: Minority owned
           type: boolean
@@ -398,22 +423,25 @@ components:
           title: Document
           type: object
           additionalProperties:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
         previously_authorized:
           title: Previously authorized
           type: boolean
         document_id:
           title: Document id
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
         registered_agent:
           title: Registered agent
           type: object
           additionalProperties:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
         authorized_person_name:
           title: Authorized person name
           type: string
@@ -422,19 +450,22 @@ components:
           title: Authorized partner
           type: object
           additionalProperties:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
         general_partners:
           type: array
           items:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
         additional_data:
           title: Additional data
           type: object
           additionalProperties:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
         use_singlefile_as_registered_agent:
           title: Use singlefile as registered agent
           type: boolean
@@ -445,8 +476,9 @@ components:
           default: false
         client_matter_number:
           title: Client matter number
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
   securitySchemes:
     OAuth2ClientCredentials:
       type: oauth2
