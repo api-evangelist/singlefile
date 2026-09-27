@@ -124,29 +124,69 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    JurisdictionUpdate:
+    ExternalAddress:
       type: object
       properties:
-        state_file_number:
-          title: State file number
+        id:
+          title: Id
           type:
           - string
           - 'null'
-          maxLength: 30
-        local_address:
-          $ref: '#/components/schemas/ExternalAddress'
-        registration_date:
-          title: Registration date
+          readOnly: true
+        street_address:
+          title: Street address
           type:
           - string
           - 'null'
-          format: date
-        expiration_date:
-          title: Expiration date
+          maxLength: 200
+        city:
+          title: City
           type:
           - string
           - 'null'
-          format: date
+          maxLength: 100
+        state:
+          title: State
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        postal_code:
+          title: Postal code
+          type:
+          - string
+          - 'null'
+          maxLength: 20
+        country:
+          title: Country
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        country_code:
+          title: Country code
+          type:
+          - string
+          - 'null'
+          maxLength: 10
+        country_area:
+          title: Country area
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        city_area:
+          title: City area
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        sorting_code:
+          title: Sorting code
+          type:
+          - string
+          - 'null'
+          maxLength: 100
     JurisdictionDetail:
       required:
       - registration_type
@@ -220,69 +260,29 @@ components:
           title: Updated at
           type: string
           format: date-time
-    ExternalAddress:
+    JurisdictionUpdate:
       type: object
       properties:
-        id:
-          title: Id
+        state_file_number:
+          title: State file number
           type:
           - string
           - 'null'
-          readOnly: true
-        street_address:
-          title: Street address
+          maxLength: 30
+        local_address:
+          $ref: '#/components/schemas/ExternalAddress'
+        registration_date:
+          title: Registration date
           type:
           - string
           - 'null'
-          maxLength: 200
-        city:
-          title: City
+          format: date
+        expiration_date:
+          title: Expiration date
           type:
           - string
           - 'null'
-          maxLength: 100
-        state:
-          title: State
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        postal_code:
-          title: Postal code
-          type:
-          - string
-          - 'null'
-          maxLength: 20
-        country:
-          title: Country
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        country_code:
-          title: Country code
-          type:
-          - string
-          - 'null'
-          maxLength: 10
-        country_area:
-          title: Country area
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        city_area:
-          title: City area
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        sorting_code:
-          title: Sorting code
-          type:
-          - string
-          - 'null'
-          maxLength: 100
+          format: date
   securitySchemes:
     OAuth2ClientCredentials:
       type: oauth2

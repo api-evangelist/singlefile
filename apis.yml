@@ -65,7 +65,7 @@ tags_raw:
 - OAuth
 apis:
 - aid: singlefile:singlefile-documents-api
-  name: SingleFile documents API
+  name: SingleFile Documents API
   description: Formation and compliance documents
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
@@ -83,7 +83,7 @@ apis:
   - type: GettingStarted
     url: https://docs.singlefile.ai/docs/getting-started
 - aid: singlefile:singlefile-entities-api
-  name: SingleFile entities API
+  name: SingleFile Entities API
   description: >-
     Business entities — create, list, read, update, and their contacts, documents, jurisdictions, orders
     and tasks
@@ -103,7 +103,7 @@ apis:
   - type: GettingStarted
     url: https://docs.singlefile.ai/docs/getting-started
 - aid: singlefile:singlefile-jurisdictions-api
-  name: SingleFile jurisdictions API
+  name: SingleFile Jurisdictions API
   description: Entity jurisdictions and DBAs across US states
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
@@ -121,7 +121,7 @@ apis:
   - type: GettingStarted
     url: https://docs.singlefile.ai/docs/getting-started
 - aid: singlefile:singlefile-orders-api
-  name: SingleFile orders API
+  name: SingleFile Orders API
   description: Filing orders — create, place, update, and document-request driven order creation
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
@@ -139,7 +139,7 @@ apis:
   - type: GettingStarted
     url: https://docs.singlefile.ai/docs/getting-started
 - aid: singlefile:singlefile-organizations-api
-  name: SingleFile organizations API
+  name: SingleFile Organizations API
   description: >-
     Organizations that own entities — CRUD plus contacts, documents, entities, orders and tasks
   humanURL: https://docs.singlefile.ai/
@@ -158,7 +158,7 @@ apis:
   - type: GettingStarted
     url: https://docs.singlefile.ai/docs/getting-started
 - aid: singlefile:singlefile-schemas-api
-  name: SingleFile schemas API
+  name: SingleFile Schemas API
   description: JSON schemas for order payloads by entity_type, filing_type and jurisdiction
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
@@ -176,7 +176,7 @@ apis:
   - type: GettingStarted
     url: https://docs.singlefile.ai/docs/getting-started
 - aid: singlefile:singlefile-tasks-api
-  name: SingleFile tasks API
+  name: SingleFile Tasks API
   description: Compliance tasks and deadlines
   humanURL: https://docs.singlefile.ai/
   baseURL: https://api.demo.singlefile.ai/external-api/v1
