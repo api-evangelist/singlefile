@@ -152,6 +152,158 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    OrderDetail:
+      type: object
+      properties:
+        id:
+          title: Id
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        order_id:
+          title: Order id
+          type: string
+          maxLength: 50
+          minLength: 1
+        entity_id:
+          title: Entity id
+          type: string
+          readOnly: true
+        entity_name:
+          title: Entity name
+          type: string
+          readOnly: true
+          minLength: 1
+        entity_type:
+          title: Entity type
+          type: string
+          enum:
+          - Any
+          - Other
+          - Corporation
+          - Limited Liability Company
+          - Association
+          - Cooperative
+          - Limited Partnership
+          - General Partnership
+          - Individual
+          - Attorney
+          - Sole Proprietorship
+          - Trust
+        organization:
+          title: Organization
+          type: string
+          readOnly: true
+        status:
+          title: Status
+          type: string
+          readOnly: true
+          minLength: 1
+        jurisdiction:
+          title: Jurisdiction
+          type: string
+          readOnly: true
+          minLength: 1
+        filing_type:
+          title: Filing type
+          type: string
+          readOnly: true
+          minLength: 1
+        completed_at:
+          title: Completed at
+          type:
+          - string
+          - 'null'
+          format: date-time
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+        created_by:
+          title: Created by
+          type: string
+          readOnly: true
+        document_id:
+          title: Document id
+          type: string
+          readOnly: true
+        variant:
+          title: Variant
+          type: string
+          readOnly: true
+        comments:
+          title: Comments
+          description: Users can enter additional comments for this order here.
+          type:
+          - string
+          - 'null'
+          maxLength: 2000
+        share_classes:
+          title: Share classes
+          type: string
+          readOnly: true
+        mailing_address:
+          title: Mailing address
+          type: string
+          readOnly: true
+        primary_address:
+          title: Primary address
+          type: string
+          readOnly: true
+        local_address:
+          title: Local address
+          type: string
+          readOnly: true
+        primary_contact:
+          title: Primary contact
+          type: string
+          readOnly: true
+        billing_contact:
+          title: Billing contact
+          type: string
+          readOnly: true
+        officers:
+          title: Officers
+          type: string
+          readOnly: true
+        registered_agent:
+          title: Registered agent
+          type: string
+          readOnly: true
+        authorized_person_name:
+          title: Authorized person name
+          type: string
+          readOnly: true
+        authorized_partner:
+          title: Authorized partner
+          type: string
+          readOnly: true
+        general_partners:
+          title: General partners
+          type: string
+          readOnly: true
+        additional_data:
+          title: Additional data
+          type: string
+          readOnly: true
+        client_matter_number:
+          title: Client matter number
+          type: string
+          readOnly: true
+          minLength: 1
+        order_items:
+          title: Order items
+          type: string
+          readOnly: true
+        total_amount:
+          title: Total amount
+          type: string
+          readOnly: true
     OrderCreate:
       required:
       - filing_type
@@ -327,158 +479,6 @@ components:
           type:
           - string
           - 'null'
-    OrderDetail:
-      type: object
-      properties:
-        id:
-          title: Id
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        order_id:
-          title: Order id
-          type: string
-          maxLength: 50
-          minLength: 1
-        entity_id:
-          title: Entity id
-          type: string
-          readOnly: true
-        entity_name:
-          title: Entity name
-          type: string
-          readOnly: true
-          minLength: 1
-        entity_type:
-          title: Entity type
-          type: string
-          enum:
-          - Any
-          - Other
-          - Corporation
-          - Limited Liability Company
-          - Association
-          - Cooperative
-          - Limited Partnership
-          - General Partnership
-          - Individual
-          - Attorney
-          - Sole Proprietorship
-          - Trust
-        organization:
-          title: Organization
-          type: string
-          readOnly: true
-        status:
-          title: Status
-          type: string
-          readOnly: true
-          minLength: 1
-        jurisdiction:
-          title: Jurisdiction
-          type: string
-          readOnly: true
-          minLength: 1
-        filing_type:
-          title: Filing type
-          type: string
-          readOnly: true
-          minLength: 1
-        completed_at:
-          title: Completed at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        created_at:
-          title: Created at
-          type: string
-          format: date-time
-        updated_at:
-          title: Updated at
-          type: string
-          format: date-time
-        created_by:
-          title: Created by
-          type: string
-          readOnly: true
-        document_id:
-          title: Document id
-          type: string
-          readOnly: true
-        variant:
-          title: Variant
-          type: string
-          readOnly: true
-        comments:
-          title: Comments
-          description: Users can enter additional comments for this order here.
-          type:
-          - string
-          - 'null'
-          maxLength: 2000
-        share_classes:
-          title: Share classes
-          type: string
-          readOnly: true
-        mailing_address:
-          title: Mailing address
-          type: string
-          readOnly: true
-        primary_address:
-          title: Primary address
-          type: string
-          readOnly: true
-        local_address:
-          title: Local address
-          type: string
-          readOnly: true
-        primary_contact:
-          title: Primary contact
-          type: string
-          readOnly: true
-        billing_contact:
-          title: Billing contact
-          type: string
-          readOnly: true
-        officers:
-          title: Officers
-          type: string
-          readOnly: true
-        registered_agent:
-          title: Registered agent
-          type: string
-          readOnly: true
-        authorized_person_name:
-          title: Authorized person name
-          type: string
-          readOnly: true
-        authorized_partner:
-          title: Authorized partner
-          type: string
-          readOnly: true
-        general_partners:
-          title: General partners
-          type: string
-          readOnly: true
-        additional_data:
-          title: Additional data
-          type: string
-          readOnly: true
-        client_matter_number:
-          title: Client matter number
-          type: string
-          readOnly: true
-          minLength: 1
-        order_items:
-          title: Order items
-          type: string
-          readOnly: true
-        total_amount:
-          title: Total amount
-          type: string
-          readOnly: true
   securitySchemes:
     OAuth2ClientCredentials:
       type: oauth2

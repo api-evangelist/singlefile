@@ -124,6 +124,29 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    JurisdictionUpdate:
+      type: object
+      properties:
+        state_file_number:
+          title: State file number
+          type:
+          - string
+          - 'null'
+          maxLength: 30
+        local_address:
+          $ref: '#/components/schemas/ExternalAddress'
+        registration_date:
+          title: Registration date
+          type:
+          - string
+          - 'null'
+          format: date
+        expiration_date:
+          title: Expiration date
+          type:
+          - string
+          - 'null'
+          format: date
     ExternalAddress:
       type: object
       properties:
@@ -260,29 +283,6 @@ components:
           title: Updated at
           type: string
           format: date-time
-    JurisdictionUpdate:
-      type: object
-      properties:
-        state_file_number:
-          title: State file number
-          type:
-          - string
-          - 'null'
-          maxLength: 30
-        local_address:
-          $ref: '#/components/schemas/ExternalAddress'
-        registration_date:
-          title: Registration date
-          type:
-          - string
-          - 'null'
-          format: date
-        expiration_date:
-          title: Expiration date
-          type:
-          - string
-          - 'null'
-          format: date
   securitySchemes:
     OAuth2ClientCredentials:
       type: oauth2
