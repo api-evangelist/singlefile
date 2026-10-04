@@ -1,0 +1,25 @@
+slug: singlefile
+provider: SingleFile
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Entities
+  spec_file: singlefile-entities-api-openapi.yml
+  capability_id: BC-110.40
+  capability_id_l1: BC-110
+  capability_name: Subsidiary & Entity Management
+  confidence: 0.85
+  evidence: '''Business entities — create, list, read, update, and their contacts, documents, jurisdictions,
+    orders and tasks''; schemas EntityDetail, JurisdictionDetail, ShareClass'
+  reason: CRUD over legal business entities with their jurisdictions, governors/share classes and compliance
+    documents — this is legal entity structure management across a group, not CRM accounts.
