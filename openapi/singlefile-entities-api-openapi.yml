@@ -639,7 +639,149 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ContactList:
+    JurisdictionList:
+      required:
+      - registration_type
+      - state_file_number
+      - status
+      - has_annual_report_subscription
+      - is_registered_agent
+      type: object
+      properties:
+        id:
+          title: Id
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        name:
+          title: Jurisdiction
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        organization_id:
+          title: Organization id
+          type: string
+          readOnly: true
+        entity_id:
+          title: Entity id
+          type: string
+          readOnly: true
+        registration_type:
+          title: Registration type
+          type: string
+          minLength: 1
+        state_file_number:
+          title: State file number
+          type: string
+          minLength: 1
+        registration_date:
+          title: Registration date
+          type:
+          - string
+          - 'null'
+          format: date
+        expiration_date:
+          title: Expiration date
+          type:
+          - string
+          - 'null'
+          format: date
+        status:
+          title: Status
+          type: string
+          minLength: 1
+        has_annual_report_subscription:
+          title: Has annual report subscription
+          type: boolean
+        is_registered_agent:
+          title: Is registered agent
+          type: boolean
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+    JurisdictionDetail:
+      required:
+      - registration_type
+      - state_file_number
+      - status
+      - has_annual_report_subscription
+      - is_registered_agent
+      type: object
+      properties:
+        id:
+          title: Id
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        name:
+          title: Jurisdiction
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        organization_id:
+          title: Organization id
+          type: string
+          readOnly: true
+        entity_id:
+          title: Entity id
+          type: string
+          readOnly: true
+        registration_type:
+          title: Registration type
+          type: string
+          minLength: 1
+        state_file_number:
+          title: State file number
+          type: string
+          minLength: 1
+        registration_date:
+          title: Registration date
+          type:
+          - string
+          - 'null'
+          format: date
+        expiration_date:
+          title: Expiration date
+          type:
+          - string
+          - 'null'
+          format: date
+        status:
+          title: Status
+          type: string
+          minLength: 1
+        has_annual_report_subscription:
+          title: Has annual report subscription
+          type: boolean
+        is_registered_agent:
+          title: Is registered agent
+          type: boolean
+        dbas:
+          title: Dbas
+          type: string
+          readOnly: true
+        local_address:
+          $ref: '#/components/schemas/ExternalAddress'
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+    EntityList:
+      required:
+      - name
       type: object
       properties:
         id:
@@ -651,25 +793,62 @@ components:
         name:
           title: Name
           type: string
-          readOnly: true
-        email:
-          title: Email
+          maxLength: 500
+          minLength: 1
+        entity_type:
+          title: Entity type
           type: string
-          format: email
-          readOnly: true
-          minLength: 1
-        phone:
-          title: Phone
-          type:
-          - string
-          - 'null'
-          readOnly: true
-          minLength: 1
-        roles:
-          type: array
-          items:
-            type: string
-            minLength: 1
+          enum:
+          - Corporation
+          - Limited Liability Company
+          - Association
+          - Attorney for Bar
+          - Benefit Corporation
+          - Close Benefit Corporation
+          - Benefit LLC
+          - Benefit Professional Corporation
+          - Benevolent Corporation
+          - Close Corporation
+          - Close Limited Liability Company
+          - Close Professional Corporation
+          - Cooperative
+          - Cooperative Corporation
+          - Farm Corporation
+          - Farm Limited Liability Company
+          - Professional Limited Liability Limited Partnership
+          - Corporation Sole
+          - Doing Business as Name
+          - Exempt Nonstock Corporation
+          - General Partnership
+          - Individual
+          - Series Professional Limited Liability Company
+          - Limited Liability Limited Partnership
+          - Limited Liability Partnership
+          - Limited Partnership
+          - Low-Profit Limited Liability Company
+          - Massachusetts Trust
+          - Mutual Benefit Enterprise
+          - Mutual Benefit Nonprofit Corporation
+          - Nonprofit Corporation
+          - Nonprofit Limited Liability Company
+          - Personal Attorney
+          - Private Foundation
+          - Professional Corporation
+          - Professional Limited Liability Company
+          - Professional Limited Liability Partnership
+          - Professional Limited Partnership
+          - Public Benefit Corporation
+          - Public Benefit Nonprofit Corporation
+          - Religious Nonprofit Corporation
+          - Series Limited Liability Company
+          - Social Purpose Corporation
+          - Sole Proprietorship
+          - Sustainable Business Corporation
+          - Statutory Trust
+          - Trust
+        organization_id:
+          title: Organization id
+          type: string
           readOnly: true
         created_at:
           title: Created at
@@ -679,6 +858,142 @@ components:
           title: Updated at
           type: string
           format: date-time
+    User:
+      required:
+      - email
+      - first_name
+      - last_name
+      type: object
+      properties:
+        id:
+          title: Id
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        email:
+          title: Email
+          type: string
+          format: email
+          minLength: 1
+        first_name:
+          title: First name
+          type: string
+          minLength: 1
+        last_name:
+          title: Last name
+          type: string
+          minLength: 1
+        job_title:
+          title: Job title
+          type:
+          - string
+          - 'null'
+        telephone_number:
+          title: Telephone number
+          type:
+          - string
+          - 'null'
+        address:
+          $ref: '#/components/schemas/ExternalAddress'
+    EntityUpdate:
+      type: object
+      properties:
+        fein:
+          title: Fein
+          type:
+          - string
+          - 'null'
+          pattern: ^\d{2}-\d{7}$
+          maxLength: 10
+        mailing_address:
+          $ref: '#/components/schemas/ExternalAddress'
+        primary_address:
+          $ref: '#/components/schemas/ExternalAddress'
+        website_url:
+          title: Website url
+          type:
+          - string
+          - 'null'
+          maxLength: 250
+        fiscal_year_end:
+          title: Fiscal year end
+          type:
+          - string
+          - 'null'
+          format: date
+        primary_contact_id:
+          title: Primary contact id
+          type:
+          - string
+          - 'null'
+          format: uuid
+        entity_authorized_contact_id:
+          title: Entity authorized contact id
+          type:
+          - string
+          - 'null'
+          format: uuid
+        incorporator_id:
+          title: Incorporator id
+          type:
+          - string
+          - 'null'
+          format: uuid
+    ContactUpdate:
+      required:
+      - email
+      type: object
+      properties:
+        first_name:
+          title: First name
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        last_name:
+          title: Last name
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        middle_name:
+          title: Middle name
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        email:
+          title: Email
+          type: string
+          format: email
+          maxLength: 254
+          minLength: 1
+        phone:
+          title: Phone
+          type:
+          - string
+          - 'null'
+          maxLength: 25
+        address:
+          $ref: '#/components/schemas/ExternalAddress'
+        is_active:
+          title: Is active
+          type: boolean
+    GrossAsset:
+      required:
+      - date
+      - assets
+      type: object
+      properties:
+        date:
+          title: Date
+          type: string
+          format: date
+        assets:
+          title: Assets
+          type: string
+          format: decimal
     OrderList:
       type: object
       properties:
@@ -776,107 +1091,6 @@ components:
           title: Created by
           type: string
           readOnly: true
-    GrossAsset:
-      required:
-      - date
-      - assets
-      type: object
-      properties:
-        date:
-          title: Date
-          type: string
-          format: date
-        assets:
-          title: Assets
-          type: string
-          format: decimal
-    User:
-      required:
-      - email
-      - first_name
-      - last_name
-      type: object
-      properties:
-        id:
-          title: Id
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        email:
-          title: Email
-          type: string
-          format: email
-          minLength: 1
-        first_name:
-          title: First name
-          type: string
-          minLength: 1
-        last_name:
-          title: Last name
-          type: string
-          minLength: 1
-        job_title:
-          title: Job title
-          type:
-          - string
-          - 'null'
-        telephone_number:
-          title: Telephone number
-          type:
-          - string
-          - 'null'
-        address:
-          $ref: '#/components/schemas/ExternalAddress'
-    ContactUpdate:
-      required:
-      - email
-      type: object
-      properties:
-        first_name:
-          title: First name
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        last_name:
-          title: Last name
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        middle_name:
-          title: Middle name
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        email:
-          title: Email
-          type: string
-          format: email
-          maxLength: 254
-          minLength: 1
-        phone:
-          title: Phone
-          type:
-          - string
-          - 'null'
-          maxLength: 25
-        address:
-          $ref: '#/components/schemas/ExternalAddress'
-        is_active:
-          title: Is active
-          type: boolean
-    EntityContactCreateRequest:
-      type: object
-      properties:
-        primary_contact:
-          $ref: '#/components/schemas/ContactCreate'
-        billing_contact:
-          $ref: '#/components/schemas/ContactCreate'
-        authorized_contact:
-          $ref: '#/components/schemas/ContactCreate'
     JurisdictionCreate:
       required:
       - name
@@ -953,365 +1167,59 @@ components:
           items:
             type: string
             maxLength: 500
-    Address:
-      type:
-      - object
-      - 'null'
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        serializer:
-          title: Serializer
-          type: string
-          readOnly: true
-        state_long_name:
-          title: State long name
-          type: string
-          readOnly: true
-          minLength: 1
-        external_id:
-          title: External id
-          type: string
-          format: uuid
-          readOnly: true
-        street_address:
-          title: Street address
-          type:
-          - string
-          - 'null'
-          maxLength: 200
-        city:
-          title: City
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        state:
-          title: State
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        postal_code:
-          title: Postal code
-          type:
-          - string
-          - 'null'
-          maxLength: 20
-        country:
-          title: Country
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        country_code:
-          title: Country code
-          type:
-          - string
-          - 'null'
-          maxLength: 10
-        country_area:
-          title: Country area
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        city_area:
-          title: City area
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        sorting_code:
-          title: Sorting code
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-    DocumentUpload:
+    DocumentList:
       required:
+      - document_type
       - filing_type
       type: object
       properties:
-        file:
-          title: File
-          description: Document file to upload (PDF, DOCX)
-          type: string
+        id:
+          title: Id
+          type:
+          - string
+          - 'null'
           readOnly: true
-          format: uri
         title:
           title: Title
-          description: Document title (auto-generated if not provided)
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 1000
+        entity_name:
+          title: Entity name
+          type:
+          - string
+          - 'null'
           minLength: 1
-        description:
-          title: Description
-          description: Document description
-          type: string
-          maxLength: 5000
-          minLength: 1
-        entity_id:
-          title: Entity id
-          description: ID of the entity to associate with this document
-          type: string
-          format: uuid
         organization_id:
           title: Organization id
-          description: ID of the organization (required if entity_id not provided)
           type: string
-          format: uuid
+          readOnly: true
+        entity_id:
+          title: Entity id
+          type: string
+          readOnly: true
         jurisdiction:
           title: Jurisdiction
-          description: Jurisdiction for the document
-          type: string
+          type:
+          - string
+          - 'null'
           maxLength: 500
+        document_type:
+          title: Document type
+          type: string
           minLength: 1
         filing_type:
           title: Filing type
-          description: Filing type for the document
           type: string
-          maxLength: 100
           minLength: 1
-        document_type:
-          title: Document type
-          description: Document type (e.g., FILING, EVIDENCE, CORPORATE_RECORDS)
-          type: string
-          maxLength: 100
-          minLength: 1
-    ContactDetail:
-      required:
-      - email
-      type: object
-      properties:
-        id:
-          title: Id
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          readOnly: true
-        first_name:
-          title: First name
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        middle_name:
-          title: Middle name
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        last_name:
-          title: Last name
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        email:
-          title: Email
-          type: string
-          format: email
-          maxLength: 254
-          minLength: 1
-        phone:
-          title: Phone
-          type:
-          - string
-          - 'null'
-          readOnly: true
-          minLength: 1
-        address:
-          $ref: '#/components/schemas/ExternalAddress'
-        roles:
-          type: array
-          items:
-            type: string
-            minLength: 1
-          readOnly: true
+        certified:
+          title: Certified
+          description: Check this if this document is a certified copy.
+          type: boolean
         created_at:
           title: Created at
           type: string
-          format: date-time
-        updated_at:
-          title: Updated at
-          type: string
-          format: date-time
-        updated_by:
-          title: Updated by
-          type: string
-          readOnly: true
-    EntityUpdate:
-      type: object
-      properties:
-        fein:
-          title: Fein
-          type:
-          - string
-          - 'null'
-          pattern: ^\d{2}-\d{7}$
-          maxLength: 10
-        mailing_address:
-          $ref: '#/components/schemas/ExternalAddress'
-        primary_address:
-          $ref: '#/components/schemas/ExternalAddress'
-        website_url:
-          title: Website url
-          type:
-          - string
-          - 'null'
-          maxLength: 250
-        fiscal_year_end:
-          title: Fiscal year end
-          type:
-          - string
-          - 'null'
-          format: date
-        primary_contact_id:
-          title: Primary contact id
-          type:
-          - string
-          - 'null'
-          format: uuid
-        entity_authorized_contact_id:
-          title: Entity authorized contact id
-          type:
-          - string
-          - 'null'
-          format: uuid
-        incorporator_id:
-          title: Incorporator id
-          type:
-          - string
-          - 'null'
-          format: uuid
-    TaskInstance:
-      required:
-      - due_by
-      type: object
-      properties:
-        id:
-          title: Id
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        due_by:
-          title: Due by
-          description: The deadline for the task.
-          type: string
-          format: date
-        responsible_user_email:
-          title: Responsible user email
-          type: string
-          readOnly: true
-        entity_id:
-          title: Entity id
-          type: string
-          readOnly: true
-        status:
-          title: Status
-          type: string
-          enum:
-          - NONE
-          - ASSIGNED
-          - WAITING_FOR_CLIENT_RESPONSE
-          - ACKNOWLEDGED
-          - COMPLETED
-          - CANCELED
-        task:
-          title: Task
-          type: string
-          readOnly: true
-        created_at:
-          title: Created at
-          type: string
-          format: date-time
-        updated_at:
-          title: Updated at
-          type: string
-          format: date-time
-        acknowledged_at:
-          title: Acknowledged at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        completed_at:
-          title: Completed at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        completed_by_order_id:
-          title: Completed by order id
-          type: string
-          readOnly: true
-        upcoming_first_reminder_at:
-          title: Upcoming first reminder at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        upcoming_second_reminder_at:
-          title: Upcoming second reminder at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        upcoming_third_reminder_at:
-          title: Upcoming third reminder at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        upcoming_fourth_reminder_at:
-          title: Upcoming fourth reminder at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        due_today_reminder_at:
-          title: Due today reminder at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        past_due_first_reminder_at:
-          title: Past due first reminder at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        past_due_second_reminder_at:
-          title: Past due second reminder at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        past_due_third_reminder_at:
-          title: Past due third reminder at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        escalate_reminder_at:
-          title: Escalate reminder at
-          type:
-          - string
-          - 'null'
-          format: date-time
-        last_reminded_at:
-          title: Last reminded at
-          type:
-          - string
-          - 'null'
           format: date-time
     EntityDetail:
       required:
@@ -1479,13 +1387,7 @@ components:
           title: Updated at
           type: string
           format: date-time
-    JurisdictionDetail:
-      required:
-      - registration_type
-      - state_file_number
-      - status
-      - has_annual_report_subscription
-      - is_registered_agent
+    ContactList:
       type: object
       properties:
         id:
@@ -1495,70 +1397,84 @@ components:
           - 'null'
           readOnly: true
         name:
-          title: Jurisdiction
+          title: Name
+          type: string
+          readOnly: true
+        email:
+          title: Email
+          type: string
+          format: email
+          readOnly: true
+          minLength: 1
+        phone:
+          title: Phone
+          type:
+          - string
+          - 'null'
+          readOnly: true
+          minLength: 1
+        roles:
+          type: array
+          items:
+            type: string
+            minLength: 1
+          readOnly: true
+        created_at:
+          title: Created at
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated at
+          type: string
+          format: date-time
+    ContactCreate:
+      required:
+      - first_name
+      - last_name
+      - email
+      type:
+      - object
+      - 'null'
+      properties:
+        first_name:
+          title: First name
           type:
           - string
           - 'null'
           maxLength: 100
-        organization_id:
-          title: Organization id
-          type: string
-          readOnly: true
-        entity_id:
-          title: Entity id
-          type: string
-          readOnly: true
-        registration_type:
-          title: Registration type
-          type: string
-          minLength: 1
-        state_file_number:
-          title: State file number
-          type: string
-          minLength: 1
-        registration_date:
-          title: Registration date
+        last_name:
+          title: Last name
           type:
           - string
           - 'null'
-          format: date
-        expiration_date:
-          title: Expiration date
+          maxLength: 100
+        middle_name:
+          title: Middle name
           type:
           - string
           - 'null'
-          format: date
-        status:
-          title: Status
+          maxLength: 100
+        email:
+          title: Email
           type: string
+          format: email
+          maxLength: 254
           minLength: 1
-        has_annual_report_subscription:
-          title: Has annual report subscription
-          type: boolean
-        is_registered_agent:
-          title: Is registered agent
-          type: boolean
-        dbas:
-          title: Dbas
-          type: string
-          readOnly: true
-        local_address:
+        phone:
+          title: Phone
+          type:
+          - string
+          - 'null'
+          maxLength: 25
+        address:
           $ref: '#/components/schemas/ExternalAddress'
-        created_at:
-          title: Created at
-          type: string
-          format: date-time
-        updated_at:
-          title: Updated at
-          type: string
-          format: date-time
-    JurisdictionList:
+        is_active:
+          title: Is active
+          type: boolean
+          default: true
+    TaskInstance:
       required:
-      - registration_type
-      - state_file_number
-      - status
-      - has_annual_report_subscription
-      - is_registered_agent
+      - due_by
       type: object
       properties:
         id:
@@ -1567,50 +1483,33 @@ components:
           - string
           - 'null'
           readOnly: true
-        name:
-          title: Jurisdiction
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        organization_id:
-          title: Organization id
+        due_by:
+          title: Due by
+          description: The deadline for the task.
+          type: string
+          format: date
+        responsible_user_email:
+          title: Responsible user email
           type: string
           readOnly: true
         entity_id:
           title: Entity id
           type: string
           readOnly: true
-        registration_type:
-          title: Registration type
-          type: string
-          minLength: 1
-        state_file_number:
-          title: State file number
-          type: string
-          minLength: 1
-        registration_date:
-          title: Registration date
-          type:
-          - string
-          - 'null'
-          format: date
-        expiration_date:
-          title: Expiration date
-          type:
-          - string
-          - 'null'
-          format: date
         status:
           title: Status
           type: string
-          minLength: 1
-        has_annual_report_subscription:
-          title: Has annual report subscription
-          type: boolean
-        is_registered_agent:
-          title: Is registered agent
-          type: boolean
+          enum:
+          - NONE
+          - ASSIGNED
+          - WAITING_FOR_CLIENT_RESPONSE
+          - ACKNOWLEDGED
+          - COMPLETED
+          - CANCELED
+        task:
+          title: Task
+          type: string
+          readOnly: true
         created_at:
           title: Created at
           type: string
@@ -1619,59 +1518,81 @@ components:
           title: Updated at
           type: string
           format: date-time
-    DocumentList:
-      required:
-      - document_type
-      - filing_type
-      type: object
-      properties:
-        id:
-          title: Id
+        acknowledged_at:
+          title: Acknowledged at
           type:
           - string
           - 'null'
-          readOnly: true
-        title:
-          title: Title
+          format: date-time
+        completed_at:
+          title: Completed at
           type:
           - string
           - 'null'
-          maxLength: 1000
-        entity_name:
-          title: Entity name
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        organization_id:
-          title: Organization id
+          format: date-time
+        completed_by_order_id:
+          title: Completed by order id
           type: string
           readOnly: true
-        entity_id:
-          title: Entity id
-          type: string
-          readOnly: true
-        jurisdiction:
-          title: Jurisdiction
+        upcoming_first_reminder_at:
+          title: Upcoming first reminder at
           type:
           - string
           - 'null'
-          maxLength: 500
-        document_type:
-          title: Document type
-          type: string
-          minLength: 1
-        filing_type:
-          title: Filing type
-          type: string
-          minLength: 1
-        certified:
-          title: Certified
-          description: Check this if this document is a certified copy.
-          type: boolean
-        created_at:
-          title: Created at
-          type: string
+          format: date-time
+        upcoming_second_reminder_at:
+          title: Upcoming second reminder at
+          type:
+          - string
+          - 'null'
+          format: date-time
+        upcoming_third_reminder_at:
+          title: Upcoming third reminder at
+          type:
+          - string
+          - 'null'
+          format: date-time
+        upcoming_fourth_reminder_at:
+          title: Upcoming fourth reminder at
+          type:
+          - string
+          - 'null'
+          format: date-time
+        due_today_reminder_at:
+          title: Due today reminder at
+          type:
+          - string
+          - 'null'
+          format: date-time
+        past_due_first_reminder_at:
+          title: Past due first reminder at
+          type:
+          - string
+          - 'null'
+          format: date-time
+        past_due_second_reminder_at:
+          title: Past due second reminder at
+          type:
+          - string
+          - 'null'
+          format: date-time
+        past_due_third_reminder_at:
+          title: Past due third reminder at
+          type:
+          - string
+          - 'null'
+          format: date-time
+        escalate_reminder_at:
+          title: Escalate reminder at
+          type:
+          - string
+          - 'null'
+          format: date-time
+        last_reminded_at:
+          title: Last reminded at
+          type:
+          - string
+          - 'null'
           format: date-time
     ShareClass:
       required:
@@ -1708,6 +1629,15 @@ components:
           - 'null'
           maximum: 9223372036854776000
           minimum: -9223372036854776000
+    EntityContactCreateRequest:
+      type: object
+      properties:
+        primary_contact:
+          $ref: '#/components/schemas/ContactCreate'
+        billing_contact:
+          $ref: '#/components/schemas/ContactCreate'
+        authorized_contact:
+          $ref: '#/components/schemas/ContactCreate'
     ExternalAddress:
       type: object
       properties:
@@ -1771,29 +1701,35 @@ components:
           - string
           - 'null'
           maxLength: 100
-    ContactCreate:
+    ContactDetail:
       required:
-      - first_name
-      - last_name
       - email
-      type:
-      - object
-      - 'null'
+      type: object
       properties:
+        id:
+          title: Id
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          readOnly: true
         first_name:
           title: First name
           type:
           - string
           - 'null'
           maxLength: 100
-        last_name:
-          title: Last name
+        middle_name:
+          title: Middle name
           type:
           - string
           - 'null'
           maxLength: 100
-        middle_name:
-          title: Middle name
+        last_name:
+          title: Last name
           type:
           - string
           - 'null'
@@ -1809,83 +1745,15 @@ components:
           type:
           - string
           - 'null'
-          maxLength: 25
+          readOnly: true
+          minLength: 1
         address:
           $ref: '#/components/schemas/ExternalAddress'
-        is_active:
-          title: Is active
-          type: boolean
-          default: true
-    EntityList:
-      required:
-      - name
-      type: object
-      properties:
-        id:
-          title: Id
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          maxLength: 500
-          minLength: 1
-        entity_type:
-          title: Entity type
-          type: string
-          enum:
-          - Corporation
-          - Limited Liability Company
-          - Association
-          - Attorney for Bar
-          - Benefit Corporation
-          - Close Benefit Corporation
-          - Benefit LLC
-          - Benefit Professional Corporation
-          - Benevolent Corporation
-          - Close Corporation
-          - Close Limited Liability Company
-          - Close Professional Corporation
-          - Cooperative
-          - Cooperative Corporation
-          - Farm Corporation
-          - Farm Limited Liability Company
-          - Professional Limited Liability Limited Partnership
-          - Corporation Sole
-          - Doing Business as Name
-          - Exempt Nonstock Corporation
-          - General Partnership
-          - Individual
-          - Series Professional Limited Liability Company
-          - Limited Liability Limited Partnership
-          - Limited Liability Partnership
-          - Limited Partnership
-          - Low-Profit Limited Liability Company
-          - Massachusetts Trust
-          - Mutual Benefit Enterprise
-          - Mutual Benefit Nonprofit Corporation
-          - Nonprofit Corporation
-          - Nonprofit Limited Liability Company
-          - Personal Attorney
-          - Private Foundation
-          - Professional Corporation
-          - Professional Limited Liability Company
-          - Professional Limited Liability Partnership
-          - Professional Limited Partnership
-          - Public Benefit Corporation
-          - Public Benefit Nonprofit Corporation
-          - Religious Nonprofit Corporation
-          - Series Limited Liability Company
-          - Social Purpose Corporation
-          - Sole Proprietorship
-          - Sustainable Business Corporation
-          - Statutory Trust
-          - Trust
-        organization_id:
-          title: Organization id
-          type: string
+        roles:
+          type: array
+          items:
+            type: string
+            minLength: 1
           readOnly: true
         created_at:
           title: Created at
@@ -1895,6 +1763,138 @@ components:
           title: Updated at
           type: string
           format: date-time
+        updated_by:
+          title: Updated by
+          type: string
+          readOnly: true
+    Address:
+      type:
+      - object
+      - 'null'
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        serializer:
+          title: Serializer
+          type: string
+          readOnly: true
+        state_long_name:
+          title: State long name
+          type: string
+          readOnly: true
+          minLength: 1
+        external_id:
+          title: External id
+          type: string
+          format: uuid
+          readOnly: true
+        street_address:
+          title: Street address
+          type:
+          - string
+          - 'null'
+          maxLength: 200
+        city:
+          title: City
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        state:
+          title: State
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        postal_code:
+          title: Postal code
+          type:
+          - string
+          - 'null'
+          maxLength: 20
+        country:
+          title: Country
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        country_code:
+          title: Country code
+          type:
+          - string
+          - 'null'
+          maxLength: 10
+        country_area:
+          title: Country area
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        city_area:
+          title: City area
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        sorting_code:
+          title: Sorting code
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+    DocumentUpload:
+      required:
+      - filing_type
+      type: object
+      properties:
+        file:
+          title: File
+          description: Document file to upload (PDF, DOCX)
+          type: string
+          readOnly: true
+          format: uri
+        title:
+          title: Title
+          description: Document title (auto-generated if not provided)
+          type: string
+          maxLength: 1000
+          minLength: 1
+        description:
+          title: Description
+          description: Document description
+          type: string
+          maxLength: 5000
+          minLength: 1
+        entity_id:
+          title: Entity id
+          description: ID of the entity to associate with this document
+          type: string
+          format: uuid
+        organization_id:
+          title: Organization id
+          description: ID of the organization (required if entity_id not provided)
+          type: string
+          format: uuid
+        jurisdiction:
+          title: Jurisdiction
+          description: Jurisdiction for the document
+          type: string
+          maxLength: 500
+          minLength: 1
+        filing_type:
+          title: Filing type
+          description: Filing type for the document
+          type: string
+          maxLength: 100
+          minLength: 1
+        document_type:
+          title: Document type
+          description: Document type (e.g., FILING, EVIDENCE, CORPORATE_RECORDS)
+          type: string
+          maxLength: 100
+          minLength: 1
   securitySchemes:
     OAuth2ClientCredentials:
       type: oauth2

@@ -147,69 +147,6 @@ components:
           - string
           - 'null'
           format: date
-    ExternalAddress:
-      type: object
-      properties:
-        id:
-          title: Id
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        street_address:
-          title: Street address
-          type:
-          - string
-          - 'null'
-          maxLength: 200
-        city:
-          title: City
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        state:
-          title: State
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        postal_code:
-          title: Postal code
-          type:
-          - string
-          - 'null'
-          maxLength: 20
-        country:
-          title: Country
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        country_code:
-          title: Country code
-          type:
-          - string
-          - 'null'
-          maxLength: 10
-        country_area:
-          title: Country area
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        city_area:
-          title: City area
-          type:
-          - string
-          - 'null'
-          maxLength: 100
-        sorting_code:
-          title: Sorting code
-          type:
-          - string
-          - 'null'
-          maxLength: 100
     JurisdictionDetail:
       required:
       - registration_type
@@ -283,6 +220,69 @@ components:
           title: Updated at
           type: string
           format: date-time
+    ExternalAddress:
+      type: object
+      properties:
+        id:
+          title: Id
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        street_address:
+          title: Street address
+          type:
+          - string
+          - 'null'
+          maxLength: 200
+        city:
+          title: City
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        state:
+          title: State
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        postal_code:
+          title: Postal code
+          type:
+          - string
+          - 'null'
+          maxLength: 20
+        country:
+          title: Country
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        country_code:
+          title: Country code
+          type:
+          - string
+          - 'null'
+          maxLength: 10
+        country_area:
+          title: Country area
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        city_area:
+          title: City area
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        sorting_code:
+          title: Sorting code
+          type:
+          - string
+          - 'null'
+          maxLength: 100
   securitySchemes:
     OAuth2ClientCredentials:
       type: oauth2
